@@ -1,0 +1,7 @@
+.searcher input{
+    border: none;
+}
+
+input:focus {
+    box-shadow: none!important;
+}
