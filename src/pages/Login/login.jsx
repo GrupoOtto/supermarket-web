@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 import Form from './form/form';
 
 import logo from '../../img/logo.png';
@@ -8,7 +10,9 @@ export default () => {
   return (
     <div id="login-container">
       <div>
-        <img src={logo} alt="logo" />
+        <Link to="/">
+          <img src={logo} alt="logo" />
+        </Link>
       </div>
       <h1 id="login-title">Ingresá a tu Cuenta</h1>
       <Form />

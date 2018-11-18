@@ -27,13 +27,13 @@ export default () => {
     <Header className="header" id="navbar">
       <Row>
         <Col xxl={4} md={5} sm={24}>
-          <RightSection hide={hide} onClick={() => setShow(!show)} />
+          <LeftSection hide={hide} onClick={() => setShow(!show)} />
         </Col>
         <Col md={1} xs={0}>
           <Divider type="vertical" />
         </Col>
         <Col xxl={19} md={18} sm={24} className={!show && hide ? 'hide' : ''}>
-          <LeftSection />
+          <RightSection />
         </Col>
       </Row>
     </Header>
