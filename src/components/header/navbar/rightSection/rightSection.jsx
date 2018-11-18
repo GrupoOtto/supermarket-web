@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { Button, Icon } from 'antd';
 
-import logo from './logo.png';
+import logo from '../../../../img/logo.png';
 
 export default props => (
   <Fragment>
