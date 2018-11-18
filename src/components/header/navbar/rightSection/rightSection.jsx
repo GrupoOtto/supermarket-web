@@ -1,16 +1,16 @@
-import React, { Fragment } from 'react';
-import { Button, Icon } from 'antd';
+import React from 'react';
+import { Row, Col } from 'antd';
 
-import logo from '../../../../img/logo.png';
+import Search from '../../../searcher/searcher';
+import Menu from './menu';
 
-export default props => (
-  <Fragment>
-    <img src={logo} alt="logo" />
-    <Button
-      className={`btn ${props.hide ? '' : 'hide'}`}
-      onClick={props.onClick}
-    >
-      <Icon type="ellipsis" />
-    </Button>
-  </Fragment>
+export default () => (
+  <Row>
+    <Col sm={17}>
+      <Search />
+    </Col>
+    <Col sm={7}>
+      <Menu />
+    </Col>
+  </Row>
 );
