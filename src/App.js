@@ -1,13 +1,22 @@
 import React, { Component } from 'react';
-import './App.css';
 
-import Header from './components/header/header';
+import { Switch, Route } from 'react-router-dom';
+
+import Login from './pages/Login/login';
+import Routes from './pages/routes';
+import Footer from './components/footer/footer';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <Header />
+        <div>
+          <Switch>
+            <Route path="/login" component={Login} />
+            <Route component={Routes} />
+          </Switch>
+        </div>
+        <Footer />
       </div>
     );
   }
