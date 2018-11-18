@@ -1,0 +1,22 @@
+#login-card {
+  text-align: left;
+  max-width: 360px;
+  margin-right: auto;
+  margin-left: auto;
+  border-radius: 8px;
+  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.15);
+  padding: 0px 10px;
+}
+
+.ant-form-item {
+  margin-bottom: 10px;
+}
+
+.ant-form-item-label {
+  line-height: inherit;
+}
+
+.ant-form-item-label label {
+  font-family: BogleWeb, Helvetica Neue, Helvetica, Arial, sans-serif;
+  color: #9a9a9a;
+}

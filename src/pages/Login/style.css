@@ -1,0 +1,25 @@
+#login-container {
+  margin: 0 auto;
+  margin-top: 50px;
+  max-width: 500px;
+  text-align: center;
+}
+
+#login-container img {
+  width: 165px;
+}
+
+#login-title {
+  margin-top: 50px;
+}
+
+input,
+input::placeholder,
+.login-form-button {
+  font-family: BogleWeb, Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
+.login-form-button {
+  margin-top: 15px;
+  width: 100%;
+}
