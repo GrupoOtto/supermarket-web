@@ -1,0 +1,62 @@
+:root {
+  --gray: #f0f1f2;
+}
+
+#categories {
+  -webkit-box-shadow: 0 2px 8px var(--gray);
+  box-shadow: 0 2px 8px var(--gray);
+  display: flex;
+  justify-content: center;
+  height: 75px;
+}
+
+#categories .category {
+  cursor: pointer;
+  margin: 0 20px;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: color 500ms ease-in-out;
+  -moz-transition: color 500ms ease-in-out;
+  -o-transition: color 500ms ease-in-out;
+  transition: color 500ms ease-in-out;
+  color: #afafaf;
+}
+
+#categories .category:hover {
+  color: #001529;
+}
+
+#categories .category .anticon {
+  display: block;
+  width: 38px;
+  padding: 10px;
+  margin: 0 auto;
+  margin-top: 9px;
+  margin-bottom: -20px;
+  border: 1px solid var(--gray);
+  border-radius: 48px;
+  -webkit-transition: border 500ms ease-in-out;
+  -moz-transition: border 500ms ease-in-out;
+  -o-transition: border 500ms ease-in-out;
+  transition: border 500ms ease-in-out;
+}
+
+#categories .category:hover .anticon {
+  border: 1px solid #d0d0d0;
+}
+
+@media (max-width: 576px) {
+  #categories {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  #categories .category {
+    margin: 0 14px;
+  }
+}

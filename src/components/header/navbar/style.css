@@ -1,15 +1,16 @@
-#header {
+.header {
     background: #fff;
-    border-bottom: 1px solid #eee;
-    -webkit-box-shadow: 0 2px 8px #f0f1f2;
-    box-shadow: 0 2px 8px #f0f1f2;
     position: relative;
     z-index: 10;
     max-width: 100%;
     height: auto;
 }
 
-#header .btn {
+#navbar {
+    border-bottom: 1px solid #eee;
+}
+
+#navbar .btn {
     margin-left: 10px;
     margin-top: 15px;
     float: right;
@@ -17,10 +18,10 @@
     width: 35px;
 }
 
-#header img {
+#navbar img {
     width: 135px;
 }
 
-#header .hide {
+#navbar .hide {
     display: none;
 }
