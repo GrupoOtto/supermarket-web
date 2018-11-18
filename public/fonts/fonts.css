@@ -1,0 +1,19 @@
+/** Proxima Nova **/
+@font-face {
+  font-family: 'BogleWeb';
+  src: url('BogleWeb-Regular.eot');
+  src: url('BogleWeb-Regular.woff') format('woff'),
+    url('BogleWeb-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/** Proxima Nova Bold **/
+@font-face {
+  font-family: 'BogleWeb Bold';
+  src: url('BogleWeb-Bold.eot');
+  src: url('BogleWeb-Bold.woff') format('woff'),
+    url('BogleWeb-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: bold;
+}
