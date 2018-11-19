@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { Card, Button, Icon } from 'antd';
+import { Card, Button } from 'antd';
 
 import Price from './components/price';
 import Input from '../input/numberSelector';

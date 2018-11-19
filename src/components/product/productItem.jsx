@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import { Icon, Col, Row, Divider } from 'antd';
 

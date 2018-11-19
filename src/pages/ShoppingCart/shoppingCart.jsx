@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { Card, Icon } from 'antd';
+import { Card } from 'antd';
 import Empty from './components/empty';
 import ProductList from './components/products';
 
