@@ -1,7 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-
-import { Icon, Row, Col } from 'antd';
+import { Icon, Row, Col, Badge } from 'antd';
 
 import './style.css';
 
@@ -13,7 +12,9 @@ export default () => (
       </NavLink>
     </Col>
     <Col xs={10}>
-      <Icon type="shopping-cart" />
+      <Badge count={5}>
+        <Icon type="shopping-cart" />
+      </Badge>
     </Col>
   </Row>
 );

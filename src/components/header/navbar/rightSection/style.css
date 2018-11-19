@@ -1,6 +1,7 @@
 .navbar-menu {
   width: 190px;
   float: right;
+  text-align: center;
 }
 
 #login span:first-of-type {
@@ -13,6 +14,18 @@
 .navbar-menu .anticon {
   font-size: 18px;
   color: rgba(0, 0, 0, 0.25);
+}
+
+.ant-badge-count {
+  left: 5px;
+  top: -6px;
+  font-size: 9px;
+  width: auto;
+  height: 13px;
+  line-height: 13px;
+  min-width: auto;
+  border-radius: 29px;
+  padding-left: 3.75px;
 }
 
 @media (max-width: 767px) {
