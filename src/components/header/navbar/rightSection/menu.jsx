@@ -12,9 +12,11 @@ export default () => (
       </NavLink>
     </Col>
     <Col xs={10}>
-      <Badge count={5}>
-        <Icon type="shopping-cart" />
-      </Badge>
+      <NavLink to="/cart">
+        <Badge count={5}>
+          <Icon type="shopping-cart" />
+        </Badge>
+      </NavLink>
     </Col>
   </Row>
 );

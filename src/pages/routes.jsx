@@ -11,7 +11,7 @@ export default () => (
     <Header />
     <div style={{ margin: '40px 20px 80px' }}>
       <Switch>
-        <Route path="/chart" exact component={ShoppingCart} />
+        <Route path="/cart" exact component={ShoppingCart} />
         <Route path="/" exact component={Home} />
         <Route component={Error} />
       </Switch>
