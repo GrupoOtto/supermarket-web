@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
-import { Form, Input, Button, Card } from 'antd';
+import { Form, Input, Button } from 'antd';
+import Card from '../../../components/card/card';
 import FormItem from '../../../components/form/formItem';
 import Icon from '../../../components/icon/icon';
 
