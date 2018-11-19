@@ -25,7 +25,8 @@
   line-height: 13px;
   min-width: auto;
   border-radius: 29px;
-  padding-left: 3.75px;
+  padding-left: 4.05px;
+  background-color: #f16a23;
 }
 
 @media (max-width: 767px) {

@@ -1,5 +1,4 @@
 .products-container {
-  margin: 40px 20px;
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;

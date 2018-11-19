@@ -24,6 +24,7 @@
   -o-transition: color 500ms ease-in-out;
   transition: color 500ms ease-in-out;
   color: #afafaf;
+  text-align: center;
 }
 
 #categories .category:hover {

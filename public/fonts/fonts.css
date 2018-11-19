@@ -17,3 +17,7 @@
   font-weight: bold;
   font-style: bold;
 }
+
+body {
+  font-family: BogleWeb, Helvetica Neue, Helvetica, Arial, sans-serif !important;
+}

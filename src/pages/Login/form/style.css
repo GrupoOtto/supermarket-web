@@ -3,9 +3,6 @@
   max-width: 360px;
   margin-right: auto;
   margin-left: auto;
-  border-radius: 8px;
-  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.15);
-  padding: 0px 10px;
 }
 
 .ant-form-item {

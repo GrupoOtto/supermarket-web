@@ -5,32 +5,31 @@
   font-family: BogleWeb, Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 
-.product-card img {
-  height: 140px;
+.product-card img,
+.product-img {
   width: auto;
   margin: 0 auto;
+}
+
+.product-card img {
   margin-top: 25px;
+  height: 140px;
 }
 
-.price,
-.price-decimal {
-  vertical-align: top;
-  font-size: 1rem;
-  line-height: 2.2rem;
-}
-
-.price-section {
-  color: #222;
-  font-weight: 700;
-}
-
-.price-value {
-  font-size: 1.875rem;
+.product-img {
+  height: 50px;
 }
 
 .product-name {
   color: #222;
   font-size: 14px;
+  font-family: BogleWeb, Helvetica Neue, Helvetica, Arial, sans-serif !important;
+  line-height: 45px;
+}
+
+.product-item .number-selector {
+  margin-top: -5px;
+  margin-bottom: 13px;
 }
 
 .product-btn,
