@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 
 import { Card, Button, Icon } from 'antd';
 
+import Price from './components/price';
 import Input from '../input/numberSelector';
 
 import './style.css';
 
 export default props => {
-  const price = props.salePrice.toString().split('.');
   const [count, setCount] = useState(0);
 
   return (
@@ -16,11 +16,7 @@ export default props => {
       hoverable
       cover={<img alt="product" src={props.image} />}
     >
-      <div className="price-section">
-        <span className="price">$</span>
-        <span className="price-value">{price[0]}</span>
-        <span className="price-decimal">{price[1] || '00'}</span>
-      </div>
+      <Price price={props.salePrice} />
       <div>
         <span className="product-name">{props.name}</span>
       </div>

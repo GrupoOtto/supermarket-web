@@ -1,0 +1,29 @@
+#cart-card {
+  max-width: 800px;
+  border-radius: 8px;
+  margin: 0 auto;
+}
+
+#cart-card .ant-card-head-title,
+.total-amount {
+  font-family: BogleWeb, Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
+.total-amount {
+  color: #222;
+  font-weight: 700;
+}
+
+#cart-card .card-footer {
+  float: right;
+  text-align: right;
+}
+
+#cart-card .price-section {
+  font-weight: inherit;
+}
+
+#cart-card .price,
+#cart-card .price-decimal {
+  line-height: 2.3rem;
+}

@@ -1,0 +1,16 @@
+.price,
+.price-decimal {
+  vertical-align: top;
+  font-size: 1rem;
+  line-height: 2.2rem;
+}
+
+.price-section {
+  color: #222;
+  font-weight: 700;
+  font-family: BogleWeb, Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
+.price-value {
+  font-size: 1.875rem;
+}
