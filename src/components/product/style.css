@@ -1,0 +1,45 @@
+.product-card {
+  width: 200px;
+  margin: 15px;
+  border-radius: 7px;
+  font-family: BogleWeb, Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
+.product-card img {
+  height: 140px;
+  width: auto;
+  margin: 0 auto;
+  margin-top: 25px;
+}
+
+.price,
+.price-decimal {
+  vertical-align: top;
+  font-size: 1rem;
+  line-height: 2.2rem;
+}
+
+.price-section {
+  color: #222;
+  font-weight: 700;
+}
+
+.price-value {
+  font-size: 1.875rem;
+}
+
+.product-name {
+  color: #222;
+  font-size: 14px;
+}
+
+.product-btn,
+.product-btn:hover,
+.product-btn:active,
+.product-btn:focus {
+  background-color: #fa6400;
+  border-color: #fa6400;
+  color: white;
+  width: 100%;
+  margin-top: 11px;
+}
