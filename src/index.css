@@ -8,3 +8,11 @@ body {
   height: auto !important;
   font-family: BogleWeb, Helvetica Neue, Helvetica, Arial, sans-serif !important;
 }
+
+.ant-btn-primary,
+.ant-btn-primary:active,
+.ant-btn-primary:focus,
+.ant-btn-primary:hover {
+  background-color: #fa6400 !important;
+  border-color: #fa6400 !important;
+}
