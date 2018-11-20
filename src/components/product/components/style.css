@@ -14,3 +14,15 @@
 .price-value {
   font-size: 1.875rem;
 }
+
+.old-price {
+  display: inline-block;
+  text-decoration: line-through;
+  color: #666;
+  font-size: 0.875rem;
+  font-weight: 400;
+  margin-right: 0.236082854800154em;
+  padding-left: 7px;
+  vertical-align: top;
+  line-height: 2.2rem;
+}

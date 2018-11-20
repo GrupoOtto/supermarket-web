@@ -16,7 +16,7 @@ export default props => {
       hoverable
       cover={<img alt="product" src={props.image} />}
     >
-      <Price price={props.salePrice} />
+      <Price price={props.salePrice} oldPrice={props.oldPrice} />
       <div>
         <span className="product-name">{props.name}</span>
       </div>
