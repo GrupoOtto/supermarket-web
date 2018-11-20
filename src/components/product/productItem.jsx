@@ -23,7 +23,7 @@ export default props => {
         <Col sm={4}>
           <Price price={props.salePrice} />
         </Col>
-        <Col sm={1}>
+        <Col sm={1} className="remove-btn">
           <small>
             <Icon type="cross" style={{ cursor: 'pointer' }} />
           </small>
