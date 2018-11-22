@@ -12,9 +12,6 @@ export default props => {
       <span className="price">$</span>
       <span className="price-value">{price[0]}</span>
       <span className="price-decimal">{price[1] || '00'}</span>
-      {props.oldPrice && (
-        <span className="old-price">${props.oldPrice.toFixed(2)}</span>
-      )}
     </div>
   );
 };

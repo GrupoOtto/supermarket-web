@@ -15,27 +15,10 @@ export default props => {
       className="product-card"
       hoverable
       cover={<img alt="product" src={props.image} />}
+      actions={[<div>Más</div>, <div>Agregar al Carrito</div>]}
     >
+      <span className="product-name">{props.name}</span>
       <Price price={props.salePrice} oldPrice={props.oldPrice} />
-      <div>
-        <span className="product-name">{props.name}</span>
-      </div>
-      {!count ? (
-        <div>
-          <Button
-            type="primary"
-            className="product-btn"
-            icon="shopping-cart"
-            onClick={() => setCount(1)}
-          >
-            Agregar
-          </Button>
-        </div>
-      ) : (
-        <div>
-          <Input value={count} onChange={setCount} />
-        </div>
-      )}
     </Card>
   );
 };

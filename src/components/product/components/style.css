@@ -6,6 +6,8 @@
 }
 
 .price-section {
+  float: right;
+  display: inline-block;
   color: #222;
   font-weight: 700;
   font-family: BogleWeb, Helvetica Neue, Helvetica, Arial, sans-serif;
