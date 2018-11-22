@@ -9,7 +9,7 @@ import Error from './Error/404';
 export default () => (
   <Fragment>
     <Header />
-    <div style={{ margin: '40px 20px 80px' }}>
+    <div className="main-container">
       <Switch>
         <Route path="/cart" exact component={ShoppingCart} />
         <Route path="/" exact component={Home} />

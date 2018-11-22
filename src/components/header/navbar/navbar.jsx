@@ -25,8 +25,8 @@ export default () => {
 
   return (
     <Header className="header" id="navbar">
-      <Row>
-        <Col xxl={4} md={5} sm={24}>
+      <Row className="header-container">
+        <Col xxl={4} md={5} sm={24} style={{ textAlign: 'center' }}>
           <LeftSection hide={hide} onClick={() => setShow(!show)} />
         </Col>
         <Col md={1} xs={0}>

@@ -5,9 +5,12 @@
 #categories {
   -webkit-box-shadow: 0 2px 8px var(--gray);
   box-shadow: 0 2px 8px var(--gray);
+}
+
+#categories .header-container {
   display: flex;
-  justify-content: center;
   height: 75px;
+  max-width: 1240px;
 }
 
 #categories .category {

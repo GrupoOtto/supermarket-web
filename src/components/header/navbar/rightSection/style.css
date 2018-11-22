@@ -2,6 +2,12 @@
   width: 190px;
   float: right;
   text-align: center;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.navbar-menu .icon {
+  margin-right: 20px;
 }
 
 #login span:first-of-type {
