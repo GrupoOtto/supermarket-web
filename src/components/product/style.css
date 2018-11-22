@@ -31,6 +31,11 @@
   margin-bottom: 13px;
 }
 
-.ant-card-body {
+.product-card .ant-card-body {
   padding: 5px 24px;
+}
+
+.toCart {
+  color: #f16a23;
+  font-weight: 400;
 }
