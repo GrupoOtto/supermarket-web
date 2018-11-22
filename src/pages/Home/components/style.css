@@ -1,0 +1,49 @@
+#filters {
+  max-width: 500px;
+  margin: 10px auto 15px;
+}
+
+#filters .ant-card-body {
+  padding: 24px !important;
+}
+
+.price-selector {
+  font-weight: 700;
+}
+
+.ant-slider {
+  padding-top: 18px;
+}
+
+.ant-slider:hover .ant-slider-track {
+  background-color: #fa6400;
+}
+
+.ant-slider-handle.ant-tooltip-open {
+  border-color: #fa6400 !important;
+}
+
+.ant-slider-handle {
+  border-color: #fa6400 !important;
+}
+
+.ant-slider-track {
+  background-color: #fa6400;
+}
+
+.ant-slider-handle:focus {
+  border-color: #fa6400 !important;
+  box-shadow: 0 0 0 5px #ffc169cb;
+}
+
+#filters small:first-of-type {
+  float: left;
+}
+
+#filters small:nth-of-type(2) {
+  float: right;
+}
+
+.ant-card-actions > li > span:hover {
+  color: #f16a23 !important;
+}
