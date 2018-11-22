@@ -1,0 +1,11 @@
+.pagination {
+  margin: 20px;
+  text-align: center;
+}
+
+.ant-pagination-item-active,
+.ant-pagination-item:hover,
+.ant-pagination-item-link:hover,
+.ant-pagination-item-link-icon {
+  border-color: #fa6400 !important;
+}
