@@ -5,12 +5,18 @@
   line-height: 2.2rem;
 }
 
-.price-section {
+.price-section,
+.price-section-left {
   float: right;
   display: inline-block;
   color: #222;
   font-weight: 700;
   font-family: BogleWeb, Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
+.price-section-left {
+  float: none;
+  margin-bottom: 10px;
 }
 
 .price-value {

@@ -17,10 +17,10 @@ class Home extends Component {
     return (
       <div>
         <Row style={{ margin: '0px 10px' }}>
-          <Col xl={4} lg={6}>
+          <Col xl={4} lg={6} span={6}>
             <Filters />
           </Col>
-          <Col xl={16} lg={18}>
+          <Col xl={20} lg={18} span={6}>
             <div className="products-container">
               {products.map((p, i) => (
                 <Product key={i} {...p} />

@@ -1,0 +1,24 @@
+.btns-section {
+  margin-top: 25px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.btns-section button {
+  width: 47%;
+}
+
+.product-details .ant-input-number {
+  margin-left: 10px;
+}
+
+.ant-input-number {
+  box-shadow: none !important;
+  outline: none;
+}
+
+.ant-input-number:hover,
+.ant-input-number:focus,
+.ant-input-number:active {
+  border-color: var(--primary);
+}
