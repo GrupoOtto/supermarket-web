@@ -1,0 +1,9 @@
+.ant-carousel img {
+  height: 350px;
+  width: auto !important;
+}
+
+.ant-carousel .slick-slide {
+  background: white;
+  text-align: center;
+}
