@@ -18,7 +18,7 @@ export default props => {
       actions={[<Icon type="eye" />, <Icon type="shopping-cart" />]}
     >
       <span className="product-name">{props.name}</span>
-      <Price price={props.salePrice} oldPrice={props.oldPrice} />
+      <Price price={props.salePrice} />
     </Card>
   );
 };
