@@ -9,3 +9,11 @@
 .ant-pagination-item-link-icon {
   border-color: var(--primary) !important;
 }
+
+.ant-pagination-item-active a,
+.ant-pagination-item:hover a,
+.ant-pagination-item-link:hover a,
+.ant-pagination-item-link-icon a,
+.ant-pagination-item-container a {
+  color: var(--primary) !important;
+}

@@ -1,10 +1,7 @@
 import React, { useState } from 'react';
 
-import { Card, Slider, Divider } from 'antd';
-import Search from '../../../components/searcher/searcher';
+import { Card, Slider } from 'antd';
 import './style.css';
-
-const { Meta } = Card;
 
 export default props => {
   const [values, setValues] = useState([0, 100]);

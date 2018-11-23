@@ -1,5 +1,6 @@
 export default [
   {
+    _id: 3423423423,
     name: 'Leche',
     salePrice: 25.54,
     costPrice: 20,
@@ -13,6 +14,7 @@ export default [
     }
   },
   {
+    _id: 2,
     name: 'Espinaca',
     image:
       'https://i5.walmartimages.com/asr/654f5744-c6ad-4b61-ba0e-476f19e6a0f6_1.dbff7509b1e697e0d0cc4e9430cf775e.jpeg?odnWidth=215&odnHeight=215&odnBg=ffffff',

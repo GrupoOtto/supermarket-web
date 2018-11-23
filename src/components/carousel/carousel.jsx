@@ -7,7 +7,7 @@ export default ({ images }) => (
   <Card>
     <Carousel autoplay>
       {images.map((i, k) => (
-        <img src={i} key={k} />
+        <img src={i} key={k} alt={`product ${k}`} />
       ))}
     </Carousel>
   </Card>
