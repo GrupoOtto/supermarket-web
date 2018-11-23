@@ -16,23 +16,23 @@
 }
 
 .ant-slider:hover .ant-slider-track {
-  background-color: #fa6400;
+  background-color: var(--primary);
 }
 
 .ant-slider-handle.ant-tooltip-open {
-  border-color: #fa6400 !important;
+  border-color: var(--primary) !important;
 }
 
 .ant-slider-handle {
-  border-color: #fa6400 !important;
+  border-color: var(--primary) !important;
 }
 
 .ant-slider-track {
-  background-color: #fa6400;
+  background-color: var(--primary);
 }
 
 .ant-slider-handle:focus {
-  border-color: #fa6400 !important;
+  border-color: var(--primary) !important;
   box-shadow: 0 0 0 5px #ffc169cb;
 }
 

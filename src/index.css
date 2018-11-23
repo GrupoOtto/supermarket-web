@@ -1,3 +1,7 @@
+:root {
+  --primary: #fa6400;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -5,12 +9,23 @@ body {
   background-color: #f8f8f8 !important;
 }
 
+.ant-btn:hover,
+.ant-btn:focus {
+  color: var(--primary) !important;
+  border-color: var(--primary) !important;
+}
+
 .ant-btn-primary,
-.ant-btn-primary:active,
 .ant-btn-primary:focus,
 .ant-btn-primary:hover {
-  background-color: #fa6400 !important;
-  border-color: #fa6400 !important;
+  color: white !important;
+  background-color: var(--primary) !important;
+  border-color: var(--primary) !important;
+}
+
+.ant-btn-primary:active {
+  background-color: #e65d02 !important;
+  border-color: #e65d02 !important;
 }
 
 .main-container {
@@ -19,5 +34,5 @@ body {
 }
 
 a {
-  color: #fa6400 !important;
+  color: var(--primary) !important;
 }

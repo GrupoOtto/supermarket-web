@@ -7,5 +7,5 @@
 .ant-pagination-item:hover,
 .ant-pagination-item-link:hover,
 .ant-pagination-item-link-icon {
-  border-color: #fa6400 !important;
+  border-color: var(--primary) !important;
 }
