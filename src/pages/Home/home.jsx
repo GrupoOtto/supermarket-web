@@ -16,11 +16,11 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <Row style={{ margin: '0px 10px' }}>
-          <Col xl={4} lg={6} span={6}>
+        <Row gutter={16} style={{ margin: '0px 10px' }}>
+          <Col xl={6} lg={6} xs={24} span={6}>
             <Filters />
           </Col>
-          <Col xl={20} lg={18} span={6}>
+          <Col xl={17} lg={18} xs={24} span={6}>
             <div className="products-container">
               {products.map((p, i) => (
                 <Product key={i} {...p} />
