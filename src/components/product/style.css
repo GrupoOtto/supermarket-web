@@ -36,6 +36,11 @@
   padding: 5px 24px;
 }
 
+.remove-btn {
+  position: absolute;
+  right: 0;
+}
+
 .toCart {
   color: #f16a23;
   font-weight: 400;

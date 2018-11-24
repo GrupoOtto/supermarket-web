@@ -1,6 +1,7 @@
 import React from 'react';
 
-import { Card, InputNumber, Button } from 'antd';
+import { Card, Button } from 'antd';
+import InputNumber from '../../../../components/input/inputNumber';
 import Price from '../../../../components/product/components/price';
 
 import './style.css';
@@ -10,7 +11,7 @@ export default props => (
     <h2>{props.name}</h2>
     <Price price={props.salePrice} left />
     <div>
-      Cantidad: <InputNumber min={1} max={99} defaultValue={1} />
+      Cantidad: <InputNumber />
     </div>
     <div className="btns-section">
       <Button size="large" type="primary">

@@ -1,8 +1,8 @@
 import React from 'react';
 
 import { Button } from 'antd';
-
 import Product from '../../../components/product/productItem';
+
 import products from '../../Home/products';
 
 export default () => (

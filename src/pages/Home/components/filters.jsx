@@ -9,7 +9,7 @@ export default props => {
   return (
     <Card id="filters">
       <small className="price-selector">Precio</small>
-      <Slider range defaultValues={values} onChange={setValues} />
+      <Slider range defaultValue={values} onChange={setValues} />
       <div>
         <small>min: ${values[0]}</small>
         <small>max: ${values[1]}</small>

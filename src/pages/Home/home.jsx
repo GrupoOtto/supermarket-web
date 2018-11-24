@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 
-import { Row, Col } from 'antd';
+import Row from '../../components/grid/row';
+import Col from '../../components/grid/col';
 import Filters from './components/filters';
 import Product from '../../components/product/productCard';
 import Pagination from '../../components/pagination/pagination';
 
 import './style.css';
+
 import products from './products';
 
 class Home extends Component {
@@ -16,11 +18,11 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <Row gutter={16} style={{ margin: '0px 10px' }}>
-          <Col xl={6} lg={6} xs={24} span={6}>
+        <Row style={{ margin: '0px 10px' }}>
+          <Col xl={6} lg={6} xs={24}>
             <Filters />
           </Col>
-          <Col xl={17} lg={18} xs={24} span={6}>
+          <Col xl={17} lg={18} xs={24}>
             <div className="products-container">
               {products.map((p, i) => (
                 <Product key={i} {...p} />
