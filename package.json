@@ -6,6 +6,7 @@
     "antd": "^3.10.7",
     "axios": "^0.18.0",
     "babel-plugin-import": "^1.11.0",
+    "lodash": "^4.17.11",
     "ramda": "^0.26.0",
     "react": "16.7.0-alpha.2",
     "react-app-rewired": "^1.6.2",
