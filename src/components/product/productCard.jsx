@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { Link } from 'react-router-dom';
 import { Card, Icon } from 'antd';
 
@@ -11,7 +10,7 @@ export default props => (
   <Card
     className="product-card"
     hoverable
-    cover={<img alt="product" src={props.image} />}
+    cover={<img alt="product" src={props.images[0]} />}
     actions={[
       <Link to={`/products/${props._id}`}>
         <Icon type="eye" />

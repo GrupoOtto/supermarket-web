@@ -1,6 +1,6 @@
 .product-card {
   min-width: 250px;
-  max-width: 270px;
+  width: 275px;
   margin: 10px 5px;
   font-family: BogleWeb, Helvetica Neue, Helvetica, Arial, sans-serif;
 }
@@ -24,7 +24,7 @@
   color: #222;
   font-size: 15px;
   font-family: BogleWeb, Helvetica Neue, Helvetica, Arial, sans-serif !important;
-  line-height: 35px;
+  line-height: 45px;
 }
 
 .product-item .number-selector {
