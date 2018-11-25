@@ -10,14 +10,13 @@ export default props => {
       <small className="price-selector">Precio</small>
       <Slider
         range
-        defaultValue={props.values}
         onChange={props.onChange}
-        min={props.minPrice}
-        max={props.maxPrice}
+        min={0}
+        max={300}
       />
       <div>
-        <small>min: ${props.values[0]}</small>
-        <small>max: ${props.values[1]}</small>
+        <small>min: </small>
+        <small>max: </small>
       </div>
     </Card>
   );
