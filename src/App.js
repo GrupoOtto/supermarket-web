@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { BrowserRouter } from 'react-router-dom';
 
 import { Switch, Route } from 'react-router-dom';
 
@@ -20,4 +21,8 @@ class App extends Component {
   }
 }
 
-export default App;
+export default () => (
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>
+);
