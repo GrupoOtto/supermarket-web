@@ -1,34 +1,48 @@
 import React, { Component } from 'react';
 
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { fetchProducts } from '../../store/actions/productsActions';
+
 import Row from '../../components/grid/row';
 import Col from '../../components/grid/col';
-import Filters from './components/filters';
-import Product from '../../components/product/productCard';
-import Pagination from '../../components/pagination/pagination';
+import Filters from './components/filters/filters';
+import ProductsSection from './components/productsSection/productsSection';
 
 import './style.css';
 
-import products from './products';
-
 class Home extends Component {
   state = {
-    products: []
+    filter: [0, Infinity]
+  };
+
+  onFilterChange = values => {
+    this.setState({ filter: values });
+  };
+
+  componentDidMount = () => {
+    this.props.fetchProducts();
   };
 
   render() {
+    const min = this.state.filter[0];
+    const max = this.state.filter[1];
+    const products = this.props.products.filter(
+      p => p.salePrice >= min && p.salePrice <= max
+    );
+
     return (
       <div>
         <Row style={{ margin: '0px 10px' }}>
           <Col xl={6} lg={6} xs={24}>
-            <Filters />
+            <Filters
+              loading={this.props.loading}
+              values={this.state.filter}
+              onAfterChange={this.onFilterChange}
+            />
           </Col>
           <Col xl={17} lg={18} xs={24}>
-            <div className="products-container">
-              {products.map((p, i) => (
-                <Product key={i} {...p} />
-              ))}
-            </div>
-            <Pagination defaultCurrent={6} total={500} />
+            <ProductsSection loading={this.props.loading} products={products} />
           </Col>
         </Row>
       </div>
@@ -36,4 +50,19 @@ class Home extends Component {
   }
 }
 
-export default Home;
+const mapStateToProps = state => {
+  return {
+    products: state.productsReducer.products,
+    loading: state.productsReducer.loading,
+    error: state.productsReducer.error
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return bindActionCreators({ fetchProducts }, dispatch);
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Home);
