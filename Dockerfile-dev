@@ -1,6 +1,6 @@
-FROM node:11
+FROM node:alpine
 
-RUN mkdir /usr/src/app
+RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
 COPY package.json yarn.lock ./
