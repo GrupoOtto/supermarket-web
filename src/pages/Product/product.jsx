@@ -1,11 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
-import { showProduct } from '../../store/actions/productsActions';
 
 import { Row } from 'antd';
 import Col from '../../components/grid/col';
 import Carousel from '../../components/carousel/carousel';
-import Details from './components/card/card';
+import Details from './components/details/details';
 import RelatedProducts from './components/relatedProducts/relatedProducts';
 import Error from '../Error/404';
 
@@ -21,7 +20,7 @@ const product = props => {
           <Carousel images={product.images} />
         </Col>
         <Col md={9}>
-          <Details {...product} />
+          <Details product={product} />
         </Col>
       </Row>
       <RelatedProducts

@@ -1,5 +1,4 @@
 import React from 'react';
-import { connect } from 'react-redux';
 
 import Product from '../../../../components/product/productCard';
 import Default from './defaultSection';
@@ -11,7 +10,7 @@ export default props => (
       {props.loading ? (
         <Default />
       ) : (
-        props.products.map((p, i) => <Product key={i} {...p} />)
+        props.products.map((p, i) => <Product key={i} product={p} />)
       )}
     </div>
     <Pagination defaultCurrent={2} total={props.products.length} />

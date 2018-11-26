@@ -9,7 +9,7 @@ export default ({ products }) => (
     <h2>Productos Relacionados</h2>
     <div className="products-container">
       {products.map((p, i) => (
-        <Product key={i} {...p} />
+        <Product key={i} product={p} />
       ))}
     </div>
   </div>

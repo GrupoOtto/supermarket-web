@@ -3,7 +3,7 @@ import React from 'react';
 import { Button } from 'antd';
 import Product from '../../../components/product/productItem';
 
-import products from '../../Home/products';
+const products = [];
 
 export default () => (
   <div>
