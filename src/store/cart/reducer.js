@@ -1,9 +1,6 @@
 import { omit } from 'lodash';
 
-export const cartReducer = (
-  state = { products: {} },
-  { type, product, amount }
-) => {
+export default (state = { products: {} }, { type, product, amount }) => {
   switch (type) {
     case 'ADD_TO_CART':
       return {
@@ -27,5 +24,3 @@ export const cartReducer = (
       return state;
   }
 };
-
-export default cartReducer;

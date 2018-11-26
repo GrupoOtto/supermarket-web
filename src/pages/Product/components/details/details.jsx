@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { addToCardAndInform } from '../../../../store/actions/cartActions';
+import { addToCardAndInform } from '../../../../store/cart/actions';
 
 import { Card, Button } from 'antd';
 import InputNumber from '../../../../components/input/inputNumber';

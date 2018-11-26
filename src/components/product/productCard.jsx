@@ -2,7 +2,7 @@ import React from 'react';
 
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { addToCardAndInform } from '../../store/actions/cartActions';
+import { addToCardAndInform } from '../../store/cart/actions';
 
 import { Link } from 'react-router-dom';
 import { Card, Icon } from 'antd';

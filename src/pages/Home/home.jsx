@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { fetchProducts } from '../../store/actions/productsActions';
+import { fetchProducts } from '../../store/products/actions';
 
 import Row from '../../components/grid/row';
 import Col from '../../components/grid/col';

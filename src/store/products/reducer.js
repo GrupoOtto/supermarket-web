@@ -1,6 +1,6 @@
 import products from './products';
 
-export const productsReducer = (
+export default (
   state = { products: [], error: false, loading: true },
   action
 ) => {
@@ -21,5 +21,3 @@ export const productsReducer = (
       return state;
   }
 };
-
-export default productsReducer;

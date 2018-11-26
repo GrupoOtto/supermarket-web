@@ -2,10 +2,7 @@ import React from 'react';
 
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import {
-  modifyFromCart,
-  removeFromCart
-} from '../../store/actions/cartActions';
+import { modifyFromCart, removeFromCart } from '../../store/cart/actions';
 
 import { Icon, Col, Row, Divider } from 'antd';
 import InputNumber from '../input/inputNumber';
