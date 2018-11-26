@@ -40,6 +40,32 @@ class RegistrationForm extends Component {
         hideRequiredMark
         className="shipment"
       >
+        <FormItem label="Nombre">
+          {getFieldDecorator('name', {
+            rules: [
+              {
+                required: true,
+                whitespace: true,
+                message: 'Ingrese su nombre.'
+              }
+            ]
+          })(<Input />)}
+        </FormItem>
+        <FormItem label="Email">
+          {getFieldDecorator('email', {
+            rules: [
+              {
+                type: 'email',
+                message: 'Ingrese un email valido.'
+              },
+              {
+                required: true,
+                whitespace: true,
+                message: 'Ingrese su email.'
+              }
+            ]
+          })(<Input />)}
+        </FormItem>
         <FormItem label="Provincia">
           {getFieldDecorator('province', {
             rules: [

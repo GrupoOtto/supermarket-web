@@ -8,12 +8,7 @@
   width: 45%;
 }
 
-.ant-btn-primary.next-btn,
-.ant-btn-primary.next-btn:active,
-.ant-btn-primary.next-btn:hover,
-.ant-btn-primary.next-btn:focus {
+.ant-btn-primary.next-btn {
   float: right;
   margin-top: 15px;
-  background-color: #1890ff !important;
-  border-color: #1890ff !important;
 }

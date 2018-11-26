@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { Card, Steps, Icon, Divider } from 'antd';
 import Shipment from './shipment/shipmentDetails';
 import Cards from './card/card';
+import Result from './result/result';
 
 import './style.css';
 
@@ -10,7 +11,7 @@ const Step = Steps.Step;
 
 class StepsSection extends Component {
   state = {
-    step: 1,
+    step: 0,
     details: {},
     card: {},
     paying: false
@@ -21,8 +22,8 @@ class StepsSection extends Component {
   };
 
   doPayment = values => {
-    console.log('done');
     this.setState({ paying: true });
+    this.setState({ step: 3 });
   };
 
   render = () => {
@@ -34,6 +35,10 @@ class StepsSection extends Component {
       {
         title: 'Datos de la tarjeta',
         element: <Cards onSubmit={this.doPayment} />
+      },
+      {
+        title: '',
+        element: <Result />
       }
     ];
 

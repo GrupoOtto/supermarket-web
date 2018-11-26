@@ -1,0 +1,17 @@
+.cart-btn {
+  margin-top: 15px;
+  margin-right: 10px;
+}
+
+.ant-steps-item-finish i,
+.ant-steps-item-process i {
+  color: var(--primary);
+}
+
+.ant-steps-item-finish .ant-steps-item-title:after {
+  background-color: var(--primary) !important;
+}
+
+.anticon-check {
+  color: gray;
+}
