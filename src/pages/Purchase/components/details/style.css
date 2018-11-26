@@ -1,0 +1,9 @@
+.purchase-details {
+  background-color: white;
+  height: 100%;
+  font-family: BogleWeb, Helvetica Neue, Helvetica, Arial, sans-serif !important;
+}
+
+.purchase-details .right {
+  float: right;
+}

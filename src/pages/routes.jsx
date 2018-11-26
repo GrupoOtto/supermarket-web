@@ -6,6 +6,7 @@ import Home from './Home/home';
 import Error from './Error/404';
 import Product from './Product/product';
 import ShoppingCart from './ShoppingCart/shoppingCart';
+import Purchase from './Purchase/purchase';
 
 export default () => (
   <Fragment>
@@ -13,6 +14,7 @@ export default () => (
     <div className="main-container">
       <Switch>
         <Route path="/cart" exact component={ShoppingCart} />
+        <Route path="/checkout" component={Purchase} />
         <Route path="/products/:id" component={Product} />
         <Route path="/" exact component={Home} />
         <Route component={Error} />

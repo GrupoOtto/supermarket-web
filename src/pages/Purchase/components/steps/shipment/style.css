@@ -1,0 +1,14 @@
+#purchase-container .ant-form {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+#purchase-container .ant-form .ant-form-item {
+  width: 45%;
+}
+
+.next-btn {
+  float: right;
+  margin-top: 15px;
+}
