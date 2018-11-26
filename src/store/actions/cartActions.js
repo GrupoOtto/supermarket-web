@@ -11,11 +11,6 @@ export const addToCardAndInform = (product, amount) => async dispatch => {
   dispatch(addToCart(product, amount));
 };
 
-export const removeFromCartAndInform = product => async dispatch => {
-  pushMessage('Se quitó el producto del carrito');
-  dispatch(removeFromCart(product));
-};
-
 export const addToCart = (product, amount) => {
   return {
     type: 'ADD_TO_CART',
@@ -24,7 +19,15 @@ export const addToCart = (product, amount) => {
   };
 };
 
-const removeFromCart = product => {
+export const modifyFromCart = (product, amount) => {
+  return {
+    type: 'MODIFY_FROM_CART',
+    product,
+    amount
+  };
+};
+
+export const removeFromCart = product => {
   return {
     type: 'REMOVE_FROM_CART',
     product

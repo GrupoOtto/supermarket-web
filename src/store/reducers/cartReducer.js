@@ -1,4 +1,4 @@
-import products from './products';
+import { omit } from 'lodash';
 
 export const cartReducer = (
   state = { products: {} },
@@ -13,7 +13,7 @@ export const cartReducer = (
           [product._id]: (state.products[product._id] || 0) + amount
         }
       };
-    case 'MODIFY_IN_CART':
+    case 'MODIFY_FROM_CART':
       return {
         ...state,
         products: { ...state.products, [product._id]: amount }
@@ -21,7 +21,7 @@ export const cartReducer = (
     case 'REMOVE_FROM_CART':
       return {
         ...state,
-        products: { ...state.products, [product._id]: undefined }
+        products: omit(state.products, [product._id])
       };
     default:
       return state;
