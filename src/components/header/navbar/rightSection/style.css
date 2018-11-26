@@ -23,15 +23,7 @@
 }
 
 .ant-badge-count {
-  left: 5px;
-  top: -6px;
-  font-size: 9px;
-  width: auto;
-  height: 13px;
-  line-height: 13px;
-  min-width: auto;
-  border-radius: 29px;
-  padding-left: 4.05px;
+  right: -5px;
   background-color: #f16a23;
 }
 
