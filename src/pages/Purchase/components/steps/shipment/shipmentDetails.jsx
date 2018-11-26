@@ -34,7 +34,12 @@ class RegistrationForm extends Component {
     cities = sortedUniqBy(cities, c => c.nombre);
 
     return (
-      <Form onSubmit={this.handleSubmit} layout="vertical" hideRequiredMark>
+      <Form
+        onSubmit={this.handleSubmit}
+        layout="vertical"
+        hideRequiredMark
+        className="shipment"
+      >
         <FormItem label="Provincia">
           {getFieldDecorator('province', {
             rules: [

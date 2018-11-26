@@ -2,16 +2,27 @@ import React, { Component } from 'react';
 
 import { Card, Steps, Icon, Divider } from 'antd';
 import Shipment from './shipment/shipmentDetails';
+import Cards from './card/card';
+
+import './style.css';
+
 const Step = Steps.Step;
 
 class StepsSection extends Component {
   state = {
-    step: 0,
-    details: {}
+    step: 1,
+    details: {},
+    card: {},
+    paying: false
   };
 
   getDetailsInfo = values => {
     this.setState({ details: values, step: 1 });
+  };
+
+  doPayment = values => {
+    console.log('done');
+    this.setState({ paying: true });
   };
 
   render = () => {
@@ -22,17 +33,20 @@ class StepsSection extends Component {
       },
       {
         title: 'Datos de la tarjeta',
-        element: <Shipment onSubmit={this.getDetailsInfo} />
+        element: <Cards onSubmit={this.doPayment} />
       }
     ];
 
     return (
       <Card>
         <div className="steps">
-          <Steps>
+          <Steps current={this.state.step}>
             <Step icon={<Icon type="solution" />} />
-            <Step icon={<Icon type="credit-card" />} />
-            <Step icon={<Icon type="loading" />} />
+            <Step
+              icon={
+                <Icon type={this.state.paying ? 'loading' : 'credit-card'} />
+              }
+            />
             <Step icon={<Icon type="check" />} />
           </Steps>
           <div className="step-content" />

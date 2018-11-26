@@ -4,11 +4,16 @@
   flex-wrap: wrap;
 }
 
-#purchase-container .ant-form .ant-form-item {
+#purchase-container .shipment .ant-form-item {
   width: 45%;
 }
 
-.next-btn {
+.ant-btn-primary.next-btn,
+.ant-btn-primary.next-btn:active,
+.ant-btn-primary.next-btn:hover,
+.ant-btn-primary.next-btn:focus {
   float: right;
   margin-top: 15px;
+  background-color: #1890ff !important;
+  border-color: #1890ff !important;
 }
