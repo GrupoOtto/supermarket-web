@@ -24,13 +24,16 @@ class Home extends Component {
     this.props.fetchProducts();
   };
 
-  render() {
+  filterProducts = () => {
     const min = this.state.filter[0];
     const max = this.state.filter[1];
-    const products = this.props.products.filter(
+    return this.props.products.filter(
       p => p.salePrice >= min && p.salePrice <= max
     );
+  };
 
+  render() {
+    const products = this.filterProducts();
     return (
       <div>
         <Row style={{ margin: '0px 10px' }}>

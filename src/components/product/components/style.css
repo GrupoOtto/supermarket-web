@@ -18,6 +18,11 @@
   float: none;
 }
 
+.price-small {
+  font-weight: 100;
+  line-height: 2.8rem;
+}
+
 .price-value {
   font-size: 1.875rem;
 }

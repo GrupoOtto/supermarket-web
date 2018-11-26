@@ -8,7 +8,11 @@ export default props => {
     .toString()
     .split('.');
   return (
-    <div className={`price-section${props.left ? '-left' : ''}`}>
+    <div
+      className={`price-section${props.left ? '-left' : ''} ${
+        props.left ? 'price-small' : ''
+      }`}
+    >
       <span className="price">$</span>
       <span className="price-value">{price[0]}</span>
       <span className="price-decimal">{price[1] || '00'}</span>
