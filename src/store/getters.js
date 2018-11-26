@@ -5,6 +5,8 @@ export const getPriceRange = state => ({
   maxProduct: maxBy(state.productsReducer.products, p => p.salePrice) || {}
 });
 
+const sumValues = obj => Object.values(obj).reduce((a, b) => a + b, 0);
+
 export const getCartAmount = state => ({
-  cartAmount: sumBy(state.cartReducer.products, p => p.amount)
+  cartAmount: sumValues(state.cartReducer.products)
 });

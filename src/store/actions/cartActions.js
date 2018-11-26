@@ -1,6 +1,6 @@
 import { message } from 'antd';
 
-const pushMessage = message => message.success(message);
+const pushMessage = msg => message.success(msg);
 
 export const addToCardAndInform = (product, amount) => async dispatch => {
   pushMessage(
