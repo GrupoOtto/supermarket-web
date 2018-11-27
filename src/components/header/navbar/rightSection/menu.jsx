@@ -1,10 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
-import { Avatar, Icon, Badge } from 'antd';
+import { Icon, Badge } from 'antd';
 
 import { getCartAmount } from '../../../../store/getters';
-import { User } from './User';
+import User from './User';
 
 import './style.css';
 
