@@ -19,3 +19,12 @@ export const getCartProducts = state => {
     )
   };
 };
+
+export const getPurchaseProducts = state => {
+  const products = state.purchaseReducer.products.map(e => e._id);
+  return {
+    products: state.productsReducer.products.filter(p =>
+      products.includes(p._id)
+    )
+  };
+};
