@@ -34,6 +34,7 @@ class StepsSection extends Component {
         title: 'Tus Productos',
         element: (
           <Products
+            onSubmit={() => this.setState({ step: 1 })}
             products={this.props.products}
             purchase={this.props.purchase}
           />

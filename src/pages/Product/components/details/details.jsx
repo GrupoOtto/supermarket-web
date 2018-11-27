@@ -28,10 +28,7 @@ const details = props => {
           size="large"
           type="primary"
           onClick={() =>
-            props.setPurchase(
-              [{ _id: props.product._id, amount: amount }],
-              'product'
-            )
+            props.setPurchase({ [props.product._id]: amount }, 'product')
           }
         >
           <Link to={'/checkout'}>Comprar Ahora</Link>

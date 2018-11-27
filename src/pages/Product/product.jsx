@@ -16,10 +16,10 @@ const product = props => {
   return product ? (
     <div style={{ margin: '40px' }}>
       <Row gutter={48}>
-        <Col md={15}>
+        <Col xs={24} lg={15}>
           <Carousel images={product.images} />
         </Col>
-        <Col md={9}>
+        <Col xs={24} lg={9}>
           <Details product={product} />
         </Col>
       </Row>

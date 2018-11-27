@@ -15,6 +15,7 @@
 }
 
 #cart-card .card-footer {
+  margin-top: 20px;
   float: right;
   text-align: right;
 }

@@ -38,3 +38,22 @@ a:active,
 a:focus {
   color: var(--primary) !important;
 }
+
+.ant-btn-primary a:hover,
+.ant-btn-primary a:active,
+.ant-btn-primary a:focus {
+  color: white !important;
+}
+
+.ant-input:hover,
+.ant-input:active,
+.ant-input:focus {
+  border-color: var(--primary);
+}
+.ant-input-search::selection {
+  background-color: var(--primary);
+}
+
+.ant-input-affix-wrapper:hover .ant-input:not(.ant-input-disabled) {
+  border-color: var(--primary);
+}

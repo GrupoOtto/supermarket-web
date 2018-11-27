@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { modifyFromCart, removeFromCart } from '../../store/cart/actions';
 
-import { Icon, Col, Row, Divider } from 'antd';
+import { Icon, Col, Row, Card } from 'antd';
 import InputNumber from '../input/inputNumber';
 import Price from './components/price';
 import './style.css';
@@ -12,7 +12,7 @@ import './style.css';
 const product = ({ cart, product, modifyFromCart, removeFromCart }) => {
   const amount = cart[product._id];
   return (
-    <div className="product-item">
+    <Card className="product-item bordeable">
       <Row style={{ textAlign: 'center' }}>
         <Col sm={1} className="remove-btn">
           <small onClick={() => removeFromCart(product)}>
@@ -35,8 +35,7 @@ const product = ({ cart, product, modifyFromCart, removeFromCart }) => {
           <Price price={product.salePrice * amount} left small />
         </Col>
       </Row>
-      <Divider />
-    </div>
+    </Card>
   );
 };
 

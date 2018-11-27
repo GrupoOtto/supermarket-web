@@ -1,16 +1,11 @@
 import React from 'react';
-import { sumBy } from 'lodash';
+import { sumBy, keys } from 'lodash';
 import { Card, Divider } from 'antd';
 
 import './style.css';
 
 export default ({ products, purchase }) => {
-  const subtotal = sumBy(
-    products,
-    x =>
-      x.salePrice *
-      purchase.find(p => p._id.toString() === x._id.toString()).amount
-  );
+  const subtotal = sumBy(products, x => x.salePrice * purchase[x._id]);
 
   const discount = 0;
   return (
@@ -18,7 +13,7 @@ export default ({ products, purchase }) => {
       <h3>Resumen de Compra</h3>
       <Divider />
       <div>
-        <span>Productos ({sumBy(purchase, x => x.amount)})</span>
+        <span>Productos ({sumBy(keys(purchase), x => purchase[x])})</span>
         <span className="right">${subtotal}</span>
       </div>
       <div>

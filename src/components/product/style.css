@@ -49,3 +49,12 @@
 .product-item .ant-col-xs-24 {
   line-height: 50px;
 }
+
+.product-item.bordeable {
+  border-radius: 0px;
+  border-top: 0px;
+}
+
+.product-item.bordeable:first-of-type {
+  border: 1px solid #e8e8e8;
+}
