@@ -6,7 +6,7 @@ import { Divider, Input, Button } from 'antd';
 const Search = Input.Search;
 
 export default ({ products, purchase, onSubmit }) => (
-  <div>
+  <div className="product-list-container">
     {products.map((p, i) => (
       <Product key={i} product={p} amount={purchase[p._id]} />
     ))}

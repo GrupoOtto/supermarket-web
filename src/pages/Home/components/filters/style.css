@@ -1,6 +1,7 @@
 #filters {
   max-width: 500px;
   margin: 10px auto 15px;
+  font-family: BogleWeb, Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 
 #filters .ant-card-body {
