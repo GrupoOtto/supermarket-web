@@ -2,7 +2,6 @@ export const fetchProducts = path => {
   return async (dispatch, getState) => {
     try {
       // Request Products
-      console.log('hola');
       dispatch(fetchSuccess());
     } catch (error) {
       dispatch(fetchError());
