@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { getFilteredProducts } from '../../store/getters';
 import { fetchProducts } from '../../store/products/actions';
 
 import Row from '../../components/grid/row';
@@ -55,7 +56,7 @@ class Home extends Component {
 
 const mapStateToProps = state => {
   return {
-    products: state.productsReducer.products,
+    products: getFilteredProducts(state).products,
     loading: state.productsReducer.loading,
     error: state.productsReducer.error
   };

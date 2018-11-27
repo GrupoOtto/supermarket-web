@@ -11,7 +11,7 @@ import Menu from './menu';
 const rightSection = ({ setSearch }) => (
   <Row>
     <Col sm={17}>
-      <Search onChange={setSearch} />
+      <Search onChange={e => setSearch(e.target.value)} />
     </Col>
     <Col sm={7}>
       <Menu />

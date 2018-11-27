@@ -3,11 +3,11 @@ import { Input, Icon } from 'antd';
 
 import './style.css';
 
-export default props => (
+export default ({ onChange }) => (
   <Input
-    onChange={console.log}
+    onChange={onChange}
     prefix={<Icon type="search" style={{ color: 'rgba(0,0,0,.25)' }} />}
     className="searcher"
-    placeholder="Buscar Productos, Precios y más..."
+    placeholder="Buscar Productos..."
   />
 );

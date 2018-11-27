@@ -11,6 +11,24 @@ export const getCartAmount = state => ({
   cartAmount: sumValues(state.cartReducer.products) || 0
 });
 
+export const getFilteredProducts = state => {
+  let products = state.productsReducer.products;
+  const category = state.uiReducer.category;
+  const search = state.uiReducer.search.toUpperCase();
+
+  if (category) {
+    products = products.filter(p => p.type.description === category);
+  }
+
+  if (search) {
+    products = products.filter(p => p.name.toUpperCase().includes(search));
+  }
+
+  return {
+    products: products
+  };
+};
+
 export const getCartProducts = state => {
   const key = keys(state.cartReducer.products);
   return {
