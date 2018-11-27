@@ -21,7 +21,7 @@ const User = ({ user, logout }) => {
 
   return (
     <Dropdown overlay={menu}>
-      <div style={{ padding: '0 50px', height: '64px', lineHeight: '64px' }}>
+      <div style={{ height: '64px', lineHeight: '64px' }}>
         <Avatar src={user.avatar} />
       </div>
     </Dropdown>
