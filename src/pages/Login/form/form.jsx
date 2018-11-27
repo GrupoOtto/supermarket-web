@@ -1,18 +1,29 @@
 import React, { Component } from 'react';
 
-import { Form, Input, Button } from 'antd';
+import { Form, Input, Button, message } from 'antd';
+import { connect } from 'react-redux';
+
 import Card from '../../../components/card/card';
 import FormItem from '../../../components/form/formItem';
 import Icon from '../../../components/icon/icon';
+import { login } from '../../../store/login/actions';
+import history from '../../../history';
 
 import './style.css';
 
 class LoginForm extends Component {
   handleSubmit = e => {
     e.preventDefault();
-    this.props.form.validateFields((err, values) => {
+    this.props.form.validateFields(async (err, { email, password }) => {
       if (!err) {
-        console.log('Received values of form: ', values);
+        try {
+          await this.props.login(email, password);
+          // push home route
+          history.push('/');
+          message.success('Loggin successful');
+        } catch (error) {
+          message.error('Login error');
+        }
       }
     });
   };
@@ -55,4 +66,12 @@ class LoginForm extends Component {
   }
 }
 
-export default Form.create()(LoginForm);
+const mapStateToProps = null;
+const mapDispatchToProps = { login };
+
+export default Form.create()(
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(LoginForm)
+);

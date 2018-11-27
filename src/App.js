@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import { Router, Switch, Route } from 'react-router-dom';
 
-import { Switch, Route } from 'react-router-dom';
-
+import Footer from './components/footer/footer';
 import Login from './pages/Login/login';
 import Routes from './pages/routes';
-import Footer from './components/footer/footer';
+import history from './history';
 
 class App extends Component {
   render() {
@@ -22,7 +21,7 @@ class App extends Component {
 }
 
 export default () => (
-  <BrowserRouter>
+  <Router history={history}>
     <App />
-  </BrowserRouter>
+  </Router>
 );
