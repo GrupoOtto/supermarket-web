@@ -1,0 +1,9 @@
+.product-image {
+  height: 50px;
+  width: auto;
+}
+
+.product-name {
+  line-height: 25px;
+  text-align: left;
+}

@@ -2,7 +2,6 @@ import React from 'react';
 
 import { connect } from 'react-redux';
 import { getCartAmount, getCartProducts } from '../../store/getters';
-
 import { Card } from 'antd';
 import Empty from './components/empty';
 import ProductList from './components/products';

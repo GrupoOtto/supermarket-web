@@ -10,7 +10,7 @@ export default props => {
   return (
     <div
       className={`price-section${props.left ? '-left' : ''} ${
-        props.left ? 'price-small' : ''
+        props.small ? 'price-small' : ''
       }`}
     >
       <span className="price">$</span>

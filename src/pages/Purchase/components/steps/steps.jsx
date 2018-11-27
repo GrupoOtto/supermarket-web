@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 
 import { Card, Steps, Icon, Divider } from 'antd';
+
+import Products from './productList/productList';
 import Shipment from './shipment/shipmentDetails';
 import Cards from './card/card';
 import Result from './result/result';
@@ -29,6 +31,15 @@ class StepsSection extends Component {
   render = () => {
     const steps = [
       {
+        title: 'Tus Productos',
+        element: (
+          <Products
+            products={this.props.products}
+            purchase={this.props.purchase}
+          />
+        )
+      },
+      {
         title: 'Datos de Envio',
         element: <Shipment onSubmit={this.getDetailsInfo} />
       },
@@ -43,9 +54,10 @@ class StepsSection extends Component {
     ];
 
     return (
-      <Card>
+      <Card className="container">
         <div className="steps">
           <Steps current={this.state.step}>
+            <Step icon={<Icon type="shopping-cart" />} />
             <Step icon={<Icon type="solution" />} />
             <Step
               icon={

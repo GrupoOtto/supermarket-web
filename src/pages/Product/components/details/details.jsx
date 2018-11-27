@@ -2,7 +2,10 @@ import React, { useState } from 'react';
 
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { setPurchase } from '../../../../store/purchase/actions';
 import { addToCardAndInform } from '../../../../store/cart/actions';
+
+import { Link } from 'react-router-dom';
 
 import { Card, Button } from 'antd';
 import InputNumber from '../../../../components/input/inputNumber';
@@ -11,22 +14,32 @@ import Price from '../../../../components/product/components/price';
 import './style.css';
 
 const details = props => {
-  const [value, setValue] = useState(1);
+  const [amount, setAmount] = useState(1);
 
   return (
     <Card className="product-details">
       <h2>{props.product.name}</h2>
       <Price price={props.product.salePrice} left />
       <div>
-        Cantidad: <InputNumber onChange={setValue} />
+        Cantidad: <InputNumber onChange={setAmount} />
       </div>
       <div className="btns-section">
-        <Button size="large" type="primary">
-          Comprar Ahora
-        </Button>
         <Button
           size="large"
-          onClick={() => props.addToCardAndInform(props.product, value)}
+          type="primary"
+          onClick={() =>
+            props.setPurchase(
+              [{ _id: props.product._id, amount: amount }],
+              'product'
+            )
+          }
+        >
+          <Link to={'/checkout'}>Comprar Ahora</Link>
+        </Button>
+
+        <Button
+          size="large"
+          onClick={() => props.addToCardAndInform(props.product, amount)}
         >
           Agregar Al Carrito
         </Button>
@@ -36,7 +49,7 @@ const details = props => {
 };
 
 const mapDispatchToProps = dispatch => {
-  return bindActionCreators({ addToCardAndInform }, dispatch);
+  return bindActionCreators({ addToCardAndInform, setPurchase }, dispatch);
 };
 
 export default connect(
