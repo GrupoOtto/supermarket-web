@@ -2,7 +2,12 @@
   min-width: 250px;
   width: 275px;
   margin: 10px 5px;
+
   font-family: BogleWeb, Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
+.product-card .ant-card-body {
+  margin-top: 5px;
 }
 
 .product-card img,
@@ -25,6 +30,10 @@
   font-size: 15px;
   font-family: BogleWeb, Helvetica Neue, Helvetica, Arial, sans-serif !important;
   line-height: 45px;
+}
+
+.product-card .product-name {
+  padding-top: 10px;
 }
 
 .product-card .ant-card-body {
