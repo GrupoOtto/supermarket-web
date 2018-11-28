@@ -5,10 +5,15 @@
   line-height: 2.2rem;
 }
 
+.product-card .price-section {
+  display: block;
+  text-align: right;
+  float: none;
+}
+
 .price-section,
 .price-section-left {
   float: right;
-  display: inline-block;
   color: #222;
   font-weight: 700;
   font-family: BogleWeb, Helvetica Neue, Helvetica, Arial, sans-serif;

@@ -20,9 +20,9 @@ class LoginForm extends Component {
           await this.props.login(email, password);
           // push home route
           history.push('/');
-          message.success('Loggin successful');
+          message.success('Sesión iniciada correctamente');
         } catch (error) {
-          message.error('Login error');
+          message.error('Email o contraseña inválidos.');
         }
       }
     });
