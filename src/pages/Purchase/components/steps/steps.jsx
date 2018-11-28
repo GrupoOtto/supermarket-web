@@ -20,7 +20,7 @@ class StepsSection extends Component {
   };
 
   getDetailsInfo = values => {
-    this.setState({ details: values, step: 1 });
+    this.setState({ details: values, step: 2 });
   };
 
   doPayment = values => {
