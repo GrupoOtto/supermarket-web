@@ -1,26 +1,30 @@
 import { omit } from 'lodash';
 
-export default (state = { products: {} }, { type, product, amount }) => {
+export default (state = defaultState, { type, product, amount }) => {
+  let products;
   switch (type) {
     case 'ADD_TO_CART':
-      return {
-        ...state,
-        products: {
-          ...state.products,
-          [product._id]: (state.products[product._id] || 0) + amount
-        }
+      products = {
+        ...state.products,
+        [product._id]: (state.products[product._id] || 0) + amount
       };
+      break;
     case 'MODIFY_FROM_CART':
-      return {
-        ...state,
-        products: { ...state.products, [product._id]: amount }
-      };
+      products = { ...state.products, [product._id]: amount };
+      break;
     case 'REMOVE_FROM_CART':
-      return {
-        ...state,
-        products: omit(state.products, [product._id])
-      };
+      products = omit(state.products, [product._id]);
+      break;
     default:
-      return state;
+      products = state.products;
+      break;
   }
+  localStorage.setItem('cart', JSON.stringify(products));
+  return { ...state, products };
+};
+
+const defaultState = {
+  products: localStorage.getItem('cart')
+    ? JSON.parse(localStorage.getItem('cart'))
+    : {}
 };
