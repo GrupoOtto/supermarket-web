@@ -34,6 +34,14 @@
   color: #001529;
 }
 
+#categories .category.active {
+  color: #001529c4;
+}
+
+#categories .category.active .anticon {
+  border: 1px solid #d0d0d0;
+}
+
 #categories .category .anticon {
   display: block;
   width: 38px;

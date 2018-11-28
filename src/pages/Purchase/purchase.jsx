@@ -15,10 +15,10 @@ const purchase = ({ products, purchase }) => {
     <div id="purchase-container">
       {products.length === 0 && <Redirect to="/" />}
       <Row>
-        <Col xs={24} md={14} style={{ marginBottom: 20 }}>
+        <Col xs={24} md={16} style={{ marginBottom: 20 }}>
           <Steps products={products} purchase={purchase} />
         </Col>
-        <Col xs={24} md={10}>
+        <Col xs={24} md={8}>
           <Details products={products} purchase={purchase} />
         </Col>
       </Row>
