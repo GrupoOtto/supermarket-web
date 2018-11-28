@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
+import history from '../../history';
 import { connect } from 'react-redux';
-import { getFilteredProducts } from '../../store/getters';
 
 import Row from '../../components/grid/row';
 import Col from '../../components/grid/col';
@@ -19,16 +19,32 @@ class Home extends Component {
     this.setState({ filter: values });
   };
 
-  filterProducts = () => {
+  filterPrice = products => {
     const min = this.state.filter[0];
     const max = this.state.filter[1];
-    return this.props.products.filter(
-      p => p.salePrice >= min && p.salePrice <= max
-    );
+    return products.filter(p => p.salePrice >= min && p.salePrice <= max);
+  };
+
+  filterSearch = products => {
+    let search = history.location.search;
+    if (!search) {
+      return products;
+    }
+    search = search.split('=')[1].toUpperCase();
+    return products.filter(p => p.name.toUpperCase().includes(search));
+  };
+
+  filteredProducts = () => {
+    let products = this.props.products;
+
+    products = this.filterPrice(products);
+    products = this.filterSearch(products);
+
+    return products;
   };
 
   render() {
-    const products = this.filterProducts();
+    const products = this.filteredProducts();
     return (
       <div>
         <Row style={{ margin: '0px 10px' }}>
@@ -50,7 +66,7 @@ class Home extends Component {
 
 const mapStateToProps = state => {
   return {
-    products: getFilteredProducts(state).products,
+    products: state.productsReducer.products,
     loading: state.productsReducer.loading,
     error: state.productsReducer.error
   };
