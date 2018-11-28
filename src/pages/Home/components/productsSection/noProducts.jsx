@@ -25,7 +25,7 @@ const noResults = ({ search, category }) => {
       </h1>
       <h2 style={styleh3}>
         No se encontraron resultados
-        {category ? ` en la categoria "${search}"` : ''}
+        {category ? ` en la categoria "${category}"` : ''}
         {search ? ` con la palabra "${search}"` : ''}
       </h2>
     </Card>
