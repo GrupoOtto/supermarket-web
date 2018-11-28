@@ -2,32 +2,22 @@ import { maxBy, minBy, keys } from 'lodash';
 
 const sumValues = obj => Object.values(obj).reduce((a, b) => a + b, 0);
 
-export const getCartAmount = state => ({
-  cartAmount: sumValues(state.cartReducer.products) || 0
+export const getCartAmount = ({ cartReducer }) => ({
+  cartAmount: sumValues(cartReducer.products) || 0
 });
 
-export const getPriceRange = state => {
-  const products = state.productsReducer.products;
-  const result = {
-    minProduct: minBy(products, p => p.salePrice) || {},
-    maxProduct: maxBy(products, p => p.salePrice) || {}
-  };
-  return result;
+export const getCartProducts = ({ cartReducer, productsReducer }) => {
+  return filter(cartReducer, productsReducer);
 };
 
-export const getCartProducts = state => {
-  const key = keys(state.cartReducer.products);
-  return {
-    products: state.productsReducer.products.filter(p =>
-      key.includes(p._id.toString())
-    )
-  };
+export const getPurchaseProducts = ({ purchaseReducer, productsReducer }) => {
+  return filter(purchaseReducer, productsReducer);
 };
 
-export const getPurchaseProducts = state => {
-  const key = keys(state.purchaseReducer.products);
+const filter = (reducer, productsReducer) => {
+  const key = keys(reducer.products);
   return {
-    products: state.productsReducer.products.filter(p =>
+    products: productsReducer.products.filter(p =>
       key.includes(p._id.toString())
     )
   };

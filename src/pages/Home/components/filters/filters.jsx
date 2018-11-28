@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { connect } from 'react-redux';
-import { getPriceRange } from '../../../../store/getters';
+import { getPriceRange } from '../../../../store/products/getters';
 
 import { Card, Slider } from 'antd';
 import './style.css';
