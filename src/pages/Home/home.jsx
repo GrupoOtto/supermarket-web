@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 import history from '../../history';
 import { connect } from 'react-redux';
 
+import { filterProducts } from '../../utils/filters';
+
 import Row from '../../components/grid/row';
 import Col from '../../components/grid/col';
 import Filters from './components/filters/filters';
@@ -19,32 +21,8 @@ class Home extends Component {
     this.setState({ filter: values });
   };
 
-  filterPrice = products => {
-    const min = this.state.filter[0];
-    const max = this.state.filter[1];
-    return products.filter(p => p.salePrice >= min && p.salePrice <= max);
-  };
-
-  filterSearch = products => {
-    let search = history.location.search;
-    if (!search) {
-      return products;
-    }
-    search = search.split('=')[1].toUpperCase();
-    return products.filter(p => p.name.toUpperCase().includes(search));
-  };
-
-  filteredProducts = () => {
-    let products = this.props.products;
-
-    products = this.filterPrice(products);
-    products = this.filterSearch(products);
-
-    return products;
-  };
-
   render() {
-    const products = this.filteredProducts();
+    const products = filterProducts(this.props.products, this.state.filter);
     return (
       <div>
         <Row style={{ margin: '0px 10px' }}>

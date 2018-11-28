@@ -16,6 +16,7 @@ export default () => (
         <Route path="/cart" exact component={ShoppingCart} />
         <Route path="/checkout" component={Purchase} />
         <Route path="/products/:id" component={Product} />
+        <Route path="/category/:category" component={Home} />
         <Route path="/" exact component={Home} />
         <Route component={Error} />
       </Switch>

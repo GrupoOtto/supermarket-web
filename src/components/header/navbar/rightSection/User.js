@@ -16,7 +16,7 @@ const User = ({ user, logout }) => {
   const menu = (
     <Menu onClick={onClick(logout)}>
       <Menu.Item key="username">{user.username}</Menu.Item>
-      <Menu.Item key="logout">Logout</Menu.Item>
+      <Menu.Item key="logout">Cerrar Sesión</Menu.Item>
     </Menu>
   );
 
