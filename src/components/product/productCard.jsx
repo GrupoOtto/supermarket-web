@@ -15,7 +15,19 @@ const product = ({ product, addToCardAndInform }) => (
   <Card
     className="product-card"
     hoverable
-    cover={<img alt="product" src={product.images[0] || `https://picsum.photos/273/140/?random&gravity=center&key=${product._id}`} />}
+    cover={
+      <Link to={`/products/${product._id}`}>
+        <img
+          alt="product"
+          src={
+            product.images[0] ||
+            `https://picsum.photos/273/140/?random&gravity=center&key=${
+              product._id
+            }`
+          }
+        />
+      </Link>
+    }
     actions={[
       <Link to={`/products/${product._id}`}>
         <Icon type="eye" />
