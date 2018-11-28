@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 import { getFilteredProducts } from '../../store/getters';
-import { fetchProducts } from '../../store/products/actions';
 
 import Row from '../../components/grid/row';
 import Col from '../../components/grid/col';
@@ -19,10 +17,6 @@ class Home extends Component {
 
   onFilterChange = values => {
     this.setState({ filter: values });
-  };
-
-  componentDidMount = () => {
-    this.props.fetchProducts();
   };
 
   filterProducts = () => {
@@ -62,11 +56,4 @@ const mapStateToProps = state => {
   };
 };
 
-const mapDispatchToProps = dispatch => {
-  return bindActionCreators({ fetchProducts }, dispatch);
-};
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Home);
+export default connect(mapStateToProps)(Home);
