@@ -11,23 +11,23 @@ import Price from './components/price';
 
 import './style.css';
 
-const product = props => (
+const product = ({ product, addToCardAndInform }) => (
   <Card
     className="product-card"
     hoverable
-    cover={<img alt="product" src={props.product.images[0]} />}
+    cover={<img alt="product" src={product.images[0] || `https://picsum.photos/273/140/?random&gravity=center&key=${product._id}`} />}
     actions={[
-      <Link to={`/products/${props.product._id}`}>
+      <Link to={`/products/${product._id}`}>
         <Icon type="eye" />
       </Link>,
       <Icon
         type="shopping-cart"
-        onClick={() => props.addToCardAndInform(props.product, 1)}
+        onClick={() => addToCardAndInform(product, 1)}
       />
     ]}
   >
-    <span className="product-name">{props.product.name}</span>
-    <Price price={props.product.salePrice} />
+    <span className="product-name">{product.name}</span>
+    <Price price={product.salePrice} />
   </Card>
 );
 

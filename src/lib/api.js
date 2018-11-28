@@ -6,4 +6,14 @@ const api = axios.create({
 });
 
 export const login = async (email, password) =>
-  api.post(`/users/login`, { email, password });
+  api.post('/users/login', { email, password });
+
+export const productList = async (token) =>
+  api.get('/products', { headers: { authorization: `Bearer ${token}`} })
+  // api.get('/bpm/products-list', { headers: { authorization: `Bearer ${token}`} })
+
+export const prepareSale = async (data, token) =>
+  api.post('/bpm/prepare-sale', { headers: { authorization: `Bearer ${token}`} })
+
+export const confirmSale = async (data, token) =>
+  api.post('/bpm/confirm-sale', data, { headers: { authorization: `Bearer ${token}`} })
