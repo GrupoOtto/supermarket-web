@@ -14,16 +14,14 @@ class CardSection extends Component {
 
   submit = () => {
     const { number, name, expiry, cvc } = this.state;
-
     if (
       this.validateLength(number, 16) &&
-      name > 0 &&
+      name.length > 0 &&
       this.validateLength(expiry, 4) &&
       this.validateLength(cvc, 4)
     ) {
       this.props.onSubmit(this.state);
     }
-    console.log(this.state);
   };
 
   validateLength(value, length) {

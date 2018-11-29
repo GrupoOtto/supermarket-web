@@ -5,6 +5,8 @@ import * as mutations from './mutations';
 
 const setLoading = createAction(mutations.SET_LOADING);
 const unsetLoading = createAction(mutations.UNSET_LOADING);
+const setPaying = createAction(mutations.SET_PAYING);
+const unsetPaying = createAction(mutations.UNSET_PAYING);
 export const setPurchase = createAction(mutations.SET_PRODUCTS);
 export const setPurchaseItems = createAction(mutations.SET_ITEMS);
 
@@ -23,5 +25,16 @@ export const prepareSale = (productsCart, couponCode) => async (
   } catch (error) {
     message.error(error.response.data.message);
     dispatch(unsetLoading());
+  }
+};
+
+export const doSale = data => async (dispatch, getState) => {
+  try {
+    dispatch(setPaying());
+    const token = getState().login.token;
+    const response = await api.confirmSale(data, token);
+  } catch (error) {
+    message.error(error.response.data.message);
+    dispatch(unsetPaying());
   }
 };

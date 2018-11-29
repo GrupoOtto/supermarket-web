@@ -1,4 +1,10 @@
 import React, { Component } from 'react';
+import { omit, pick } from 'lodash';
+
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { doSale } from '../../../../store/purchase/actions';
+import { getUser } from '../../../../store/login/getters';
 
 import { Card, Steps, Icon, Divider } from 'antd';
 
@@ -16,17 +22,27 @@ class StepsSection extends Component {
   state = {
     step: 0,
     details: {},
-    card: {},
-    paying: false
+    creditCard: {},
+    card: {}
   };
 
   getDetailsInfo = values => {
     this.setState({ details: values, step: 2 });
   };
 
-  doPayment = values => {
-    this.setState({ paying: true });
-    this.setState({ step: 3 });
+  getData = () => ({
+    user: {
+      _id: this.props.user ? this.props.user.sub : null,
+      email: this.state.details.email,
+      name: this.state.details.name
+    },
+    shipment: omit(this.state.details, ['email', 'name']),
+    creditCard: pick(this.state.creditCard, ['number', 'name'])
+  });
+
+  doPayment = creditCard => {
+    this.setState({ creditCard });
+    this.props.doSale(this.getData());
   };
 
   render = () => {
@@ -67,7 +83,7 @@ class StepsSection extends Component {
             <Step icon={<Icon type="solution" />} />
             <Step
               icon={
-                <Icon type={this.state.paying ? 'loading' : 'credit-card'} />
+                <Icon type={this.props.paying ? 'loading' : 'credit-card'} />
               }
             />
             <Step icon={<Icon type="check" />} />
@@ -82,4 +98,18 @@ class StepsSection extends Component {
   };
 }
 
-export default StepsSection;
+const mapDispatchToProps = dispatch => {
+  return bindActionCreators({ doSale }, dispatch);
+};
+
+const mapStateToProps = state => {
+  return {
+    user: getUser(state).user,
+    paying: state.purchaseReducer.paying
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(StepsSection);

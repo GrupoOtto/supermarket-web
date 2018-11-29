@@ -86,7 +86,7 @@ class RegistrationForm extends Component {
           )}
         </FormItem>
         <FormItem label="Ciudad">
-          {getFieldDecorator('Ciudad', {
+          {getFieldDecorator('city', {
             rules: [
               {
                 required: true,

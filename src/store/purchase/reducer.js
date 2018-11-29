@@ -6,6 +6,10 @@ const handlers = {
 
   [mutations.UNSET_LOADING]: state => ({ ...state, loading: false }),
 
+  [mutations.SET_PAYING]: state => ({ ...state, paying: true }),
+
+  [mutations.UNSET_PAYING]: state => ({ ...state, paying: false }),
+
   [mutations.SET_ITEMS]: (state, items) => ({ ...defaultState, items }),
 
   [mutations.SET_PRODUCTS]: (state, data) => {
@@ -22,6 +26,7 @@ const handlers = {
 const defaultState = {
   products: [],
   loading: false,
+  paying: false,
   total: 0,
   items: {},
   coupon: ''
