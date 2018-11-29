@@ -36,6 +36,7 @@ class StepsSection extends Component {
           <Products
             onSubmit={() => this.setState({ step: 1 })}
             products={this.props.products}
+            loading={this.props.loading}
           />
         )
       },
@@ -54,7 +55,10 @@ class StepsSection extends Component {
     ];
 
     return (
-      <Card className="container" loading={this.props.loading}>
+      <Card
+        className="container"
+        loading={this.props.loading && !this.props.coupon}
+      >
         <div className="steps">
           <Steps current={this.state.step}>
             <Step icon={<Icon type="shopping-cart" />} />

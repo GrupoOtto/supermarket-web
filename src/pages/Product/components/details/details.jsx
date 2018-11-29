@@ -13,13 +13,13 @@ import Price from '../../../../components/product/components/price';
 
 import './style.css';
 
-const details = props => {
+const details = ({ product, prepareSale, addToCardAndInform }) => {
   const [amount, setAmount] = useState(1);
 
   return (
     <Card className="product-details">
-      <h2>{props.product.name}</h2>
-      <Price price={props.product.final} left />
+      <h2>{product.name}</h2>
+      <Price price={product.final} left />
       <div>
         Cantidad: <InputNumber onChange={setAmount} />
       </div>
@@ -27,14 +27,14 @@ const details = props => {
         <Button
           size="large"
           type="primary"
-          onClick={() => props.prepareSale({ [props.product._id]: amount })}
+          onClick={() => prepareSale({ [product._id]: amount })}
         >
           <Link to={'/checkout'}>Comprar Ahora</Link>
         </Button>
 
         <Button
           size="large"
-          onClick={() => props.addToCardAndInform(props.product, amount)}
+          onClick={() => addToCardAndInform(product, amount)}
         >
           Agregar Al Carrito
         </Button>

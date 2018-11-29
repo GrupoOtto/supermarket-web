@@ -14,7 +14,7 @@ export const productList = async token =>
   });
 
 export const prepareSale = async (data, token) =>
-  api.post('/bpm/prepare-sale', {
+  api.post('/bpm/prepare-sale', data, {
     headers: { authorization: `Bearer ${token}` }
   });
 

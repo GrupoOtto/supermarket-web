@@ -8,7 +8,7 @@ const fetchError = createAction(mutations.FETCH_ERROR);
 const setLoading = createAction(mutations.SET_LOADING);
 const unsetLoading = createAction(mutations.UNSET_LOADING);
 
-export const fetchProducts = path => async (dispatch, getState) => {
+export const fetchProducts = () => async (dispatch, getState) => {
   try {
     dispatch(setLoading());
     const { token } = getToken(getState());

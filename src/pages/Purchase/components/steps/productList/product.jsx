@@ -5,7 +5,7 @@ import Price from '../../../../../components/product/components/price';
 
 import './style.css';
 
-export default ({ product, amount }) => (
+export default ({ product }) => (
   <Card className="product-item bordeable">
     <Row>
       <Col sm={12} md={6}>
@@ -17,10 +17,10 @@ export default ({ product, amount }) => (
       </Col>
       <Col sm={6} md={6} className="product-name">
         <div>{product.name}</div>
-        <small>Cantidad: {amount}</small>
+        <small>Cantidad: {product.amount}</small>
       </Col>
       <Col sm={6} md={12}>
-        <Price price={product.final * amount} small />
+        <Price price={product.final * parseInt(product.amount)} small />
       </Col>
     </Row>
   </Card>

@@ -10,16 +10,21 @@ import Steps from './components/steps/steps';
 
 import './style.css';
 
-const purchase = ({ products, loading }) => {
+const purchase = ({ products, loading, total, coupon }) => {
   return (
     <div id="purchase-container">
       {products.length === 0 && !loading && <Redirect to="/" />}
       <Row>
         <Col xs={24} md={16} style={{ marginBottom: 20 }}>
-          <Steps products={products} loading={loading} />
+          <Steps products={products} loading={loading} coupon={coupon} />
         </Col>
         <Col xs={24} md={8}>
-          <Details products={products} loading={loading} />
+          <Details
+            products={products}
+            loading={loading}
+            total={total}
+            coupon={coupon}
+          />
         </Col>
       </Row>
     </div>
@@ -29,7 +34,9 @@ const purchase = ({ products, loading }) => {
 const mapStateToProps = ({ purchaseReducer }) => {
   return {
     products: purchaseReducer.products,
-    loading: purchaseReducer.loading
+    loading: purchaseReducer.loading,
+    total: purchaseReducer.total,
+    coupon: purchaseReducer.total
   };
 };
 
