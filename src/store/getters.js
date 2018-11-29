@@ -1,4 +1,4 @@
-import { maxBy, minBy, keys } from 'lodash';
+import { keys } from 'lodash';
 
 const sumValues = obj => Object.values(obj).reduce((a, b) => a + b, 0);
 

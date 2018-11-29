@@ -1,7 +1,6 @@
 import React from 'react';
 import history from '../../../history';
 import { Icon } from 'antd';
-import { Link } from 'react-router-dom';
 
 const onClick = (path, active) => {
   const url = active ? '/' : `/category/${path}`;

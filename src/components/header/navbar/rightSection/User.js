@@ -6,7 +6,7 @@ import { getUser } from '../../../../store/login/getters';
 import { logout } from '../../../../store/login/actions';
 
 const onClick = logout => ({ key }) => {
-  if (key == 'logout') {
+  if (key === 'logout') {
     message.success('Sesión cerrada correctamente.');
     logout();
   }

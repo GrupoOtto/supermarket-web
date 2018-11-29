@@ -2,7 +2,6 @@ import React from 'react';
 
 import Product from '../../../../components/product/productCard';
 import Default from './defaultSection';
-import Pagination from '../../../../components/pagination/pagination';
 import NoProducts from './noProducts';
 
 export default ({ loading, products }) => (

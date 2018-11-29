@@ -1,4 +1,4 @@
-import { maxBy, minBy, keys, uniq, sort } from 'lodash';
+import { maxBy, minBy, uniq } from 'lodash';
 
 export const getProducts = ({ productsReducer }) => ({
   products: productsReducer.products
