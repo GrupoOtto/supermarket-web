@@ -14,6 +14,13 @@ const styleh3 = {
   fontFamily: 'BogleWeb, Helvetica Neue, Helvetica, Arial, sans-serif'
 };
 
+const SearchSpan = ({ text }) => (
+  <span>
+    {' '}
+    con la palabra "<span style={{ overflowWrap: 'break-word' }}>{text}</span>"
+  </span>
+);
+
 const noResults = () => {
   const search = history.location.search
     ? history.location.search.split('=')[1]
@@ -28,7 +35,7 @@ const noResults = () => {
       </h1>
       <h2 style={styleh3}>
         No se encontraron resultados
-        {search ? ` con la palabra "${search}"` : ''}
+        {search ? <SearchSpan text={search} /> : ''}
       </h2>
     </Card>
   );

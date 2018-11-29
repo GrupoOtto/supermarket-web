@@ -18,6 +18,7 @@ export default () => (
     }
     prefix={<Icon type="search" style={{ color: 'rgba(0,0,0,.25)' }} />}
     className="searcher"
+    max={50}
     placeholder="Buscar Productos..."
   />
 );
