@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import { prepareSale } from '../../../../../store/purchase/actions';
 
 import Product from './product';
 import { Divider, Input, Button, Icon } from 'antd';
@@ -19,18 +17,9 @@ const productList = ({
     {products.map((p, i) => (
       <Product key={i} product={p} />
     ))}
-    <h3 className="title-discount">Descuento</h3>
-    <Divider />
-    <Search
-      style={{ maxWidth: 400, marginBottom: 10 }}
-      placeholder="Ingresá tu cupón"
-      enterButton={loading ? <Icon type="loading" /> : 'Aplicar'}
-      loading={true}
-      onSearch={value => (value ? prepareSale(products, value) : null)}
-    />
     <Button
       type="primary"
-      className="next-btn"
+      className="next-btn product-list"
       onClick={onSubmit}
       style={{ marginTop: 0 }}
     >
@@ -39,11 +28,10 @@ const productList = ({
   </div>
 );
 
-const mapDispatchToProps = dispatch => {
-  return bindActionCreators({ prepareSale }, dispatch);
+const mapStateToProps = ({ purchaseReducer }) => {
+  return {
+    products: purchaseReducer.products
+  };
 };
 
-export default connect(
-  null,
-  mapDispatchToProps
-)(productList);
+export default connect(mapStateToProps)(productList);

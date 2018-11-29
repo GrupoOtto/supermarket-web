@@ -2,6 +2,7 @@ import React from 'react';
 
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router';
+import { keys } from 'lodash';
 import { getPurchaseProducts } from '../../store/getters';
 import Row from '../../components/grid/row';
 import Col from '../../components/grid/col';
@@ -10,33 +11,42 @@ import Steps from './components/steps/steps';
 
 import './style.css';
 
-const purchase = ({ products, loading, total, coupon }) => {
-  return (
-    <div id="purchase-container">
-      {products.length === 0 && !loading && <Redirect to="/" />}
-      <Row>
-        <Col xs={24} md={16} style={{ marginBottom: 20 }}>
-          <Steps products={products} loading={loading} coupon={coupon} />
-        </Col>
-        <Col xs={24} md={8}>
-          <Details
-            products={products}
-            loading={loading}
-            total={total}
-            coupon={coupon}
-          />
-        </Col>
-      </Row>
-    </div>
-  );
-};
+const purchase = ({
+  products,
+  loading,
+  total,
+  coupon,
+  purchase,
+  calculated
+}) => (
+  <div id="purchase-container">
+    {keys(purchase).length === 0 && !loading && <Redirect to="/" />}
+    <Row>
+      <Col xs={24} md={16} style={{ marginBottom: 20 }}>
+        <Steps loading={loading} coupon={coupon} />
+      </Col>
+      <Col xs={24} md={8}>
+        <Details
+          products={products}
+          loading={loading}
+          purchase={purchase}
+          total={total}
+          calculated={calculated}
+          coupon={coupon}
+        />
+      </Col>
+    </Row>
+  </div>
+);
 
-const mapStateToProps = ({ purchaseReducer }) => {
+const mapStateToProps = status => {
   return {
-    products: purchaseReducer.products,
-    loading: purchaseReducer.loading,
-    total: purchaseReducer.total,
-    coupon: purchaseReducer.total
+    calculated: getPurchaseProducts(status).products,
+    products: status.purchaseReducer.products,
+    purchase: status.purchaseReducer.items,
+    loading: status.purchaseReducer.loading,
+    total: status.purchaseReducer.total,
+    coupon: status.purchaseReducer.coupon
   };
 };
 

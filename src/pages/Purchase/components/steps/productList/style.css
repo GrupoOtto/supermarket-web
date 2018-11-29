@@ -11,3 +11,7 @@
 .title-discount {
   margin-top: 30px;
 }
+
+.next-btn.product-list {
+  margin-top: 20px !important;
+}

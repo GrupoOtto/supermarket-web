@@ -10,6 +10,15 @@ export const getCartProducts = ({ cartReducer, productsReducer }) => {
   return filter(cartReducer, productsReducer);
 };
 
+export const getPurchaseProducts = ({ purchaseReducer, productsReducer }) => {
+  const key = keys(purchaseReducer.items);
+  return {
+    products: productsReducer.products.filter(p =>
+      key.includes(p._id.toString())
+    )
+  };
+};
+
 const filter = (reducer, productsReducer) => {
   const key = keys(reducer.products);
   return {

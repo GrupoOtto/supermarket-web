@@ -18,10 +18,7 @@ export const prepareSale = (productsCart, couponCode) => async (
     const response = await api.prepareSale({ productsCart, couponCode }, token);
     dispatch(setPurchase(response.data));
   } catch (error) {
-    let msg = couponCode
-      ? 'Cupón Invalido'
-      : 'Ocurrió un error al procesar la compra. Intenta nuevamente.';
-    message.error(msg);
+    message.error(error.response.data.message);
     dispatch(unsetLoading());
   }
 };

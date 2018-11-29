@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 
 import { Card, Steps, Icon, Divider } from 'antd';
 
-import Products from './productList/productList';
+import Products from './presale/presale';
+import ProductsDiscount from './productList/productList';
 import Shipment from './shipment/shipmentDetails';
 import Cards from './card/card';
 import Result from './result/result';
@@ -29,13 +30,14 @@ class StepsSection extends Component {
   };
 
   render = () => {
+    const ProductList = this.props.coupon ? ProductsDiscount : Products;
+
     const steps = [
       {
         title: 'Tus Productos',
         element: (
-          <Products
+          <ProductList
             onSubmit={() => this.setState({ step: 1 })}
-            products={this.props.products}
             loading={this.props.loading}
           />
         )
