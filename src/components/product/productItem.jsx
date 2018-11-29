@@ -32,7 +32,7 @@ const product = ({ cart, product, modifyFromCart, removeFromCart }) => {
           />
         </Col>
         <Col sm={4} xs={24}>
-          <Price price={product.salePrice * amount} left small />
+          <Price price={product.final * amount} left small />
         </Col>
       </Row>
     </Card>

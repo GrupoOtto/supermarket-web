@@ -15,7 +15,7 @@ const productsList = ({ products, cart, prepareSale }) => (
     <div className="card-footer">
       <h1 className="total-amount">
         Total: $
-        {products.reduce((a, b) => a + b.salePrice * cart[b._id], 0).toFixed(2)}
+        {products.reduce((a, b) => a + b.final * cart[b._id], 0).toFixed(2)}
       </h1>
       <Button type="primary" onClick={() => prepareSale(cart)}>
         <Link to="/checkout">Comprar Todo</Link>

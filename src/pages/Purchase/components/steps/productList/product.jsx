@@ -20,7 +20,7 @@ export default ({ product, amount }) => (
         <small>Cantidad: {amount}</small>
       </Col>
       <Col sm={6} md={12}>
-        <Price price={product.salePrice * amount} small />
+        <Price price={product.final * amount} small />
       </Col>
     </Row>
   </Card>

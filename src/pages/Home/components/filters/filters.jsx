@@ -7,8 +7,8 @@ import { Card, Slider } from 'antd';
 import './style.css';
 
 const filters = props => {
-  const min = Math.trunc(props.minProduct.salePrice) || 0;
-  const max = Math.trunc(props.maxProduct.salePrice) || 0;
+  const min = Math.trunc(props.minProduct.final) || 0;
+  const max = Math.trunc(props.maxProduct.final) || 0;
   return (
     <Card id="filters" loading={props.loading}>
       <small className="price-selector">Precio</small>

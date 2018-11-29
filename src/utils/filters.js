@@ -3,7 +3,7 @@ import history from '../history';
 export const filterPrice = (products, priceRange) => {
   const min = priceRange[0];
   const max = priceRange[1];
-  return products.filter(p => p.salePrice >= min && p.salePrice <= max);
+  return products.filter(p => p.final >= min && p.final <= max);
 };
 
 export const filterSearch = products => {

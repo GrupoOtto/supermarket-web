@@ -5,7 +5,7 @@ import { Card, Divider } from 'antd';
 import './style.css';
 
 export default ({ products, loading }) => {
-  const subtotal = sumBy(products, x => x.salePrice);
+  const subtotal = sumBy(products, x => x.final);
 
   const discount = 0;
   return (

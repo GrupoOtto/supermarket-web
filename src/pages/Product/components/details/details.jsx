@@ -19,7 +19,7 @@ const details = props => {
   return (
     <Card className="product-details">
       <h2>{props.product.name}</h2>
-      <Price price={props.product.salePrice} left />
+      <Price price={props.product.final} left />
       <div>
         Cantidad: <InputNumber onChange={setAmount} />
       </div>

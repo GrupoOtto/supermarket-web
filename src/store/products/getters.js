@@ -14,6 +14,6 @@ export const getCategories = ({ productsReducer }) => ({
 });
 
 export const getPriceRange = ({ productsReducer }) => ({
-  minProduct: minBy(productsReducer.products, p => p.salePrice) || {},
-  maxProduct: maxBy(productsReducer.products, p => p.salePrice) || {}
+  minProduct: minBy(productsReducer.products, p => p.final) || {},
+  maxProduct: maxBy(productsReducer.products, p => p.final) || {}
 });

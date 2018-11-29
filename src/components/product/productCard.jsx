@@ -39,7 +39,7 @@ const product = ({ product, addToCardAndInform }) => (
     ]}
   >
     <span className="product-name">{product.name}</span>
-    <Price price={product.salePrice} />
+    <Price price={product.final} />
   </Card>
 );
 
