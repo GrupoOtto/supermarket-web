@@ -25,4 +25,3 @@ export const prepareSale = (productsCart, couponCode) => async (
     dispatch(unsetLoading());
   }
 };
-/
