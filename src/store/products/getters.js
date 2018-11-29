@@ -1,8 +1,17 @@
-import { maxBy, minBy, keys } from 'lodash';
+import { maxBy, minBy, keys, uniq, sort } from 'lodash';
 
-export const getProducts = ({ productsReducer }) => ({ products: productsReducer.products })
-export const getLoading = ({ productsReducer }) => ({ products: productsReducer.loading })
-export const getError = ({ productsReducer }) => ({ products: productsReducer.error })
+export const getProducts = ({ productsReducer }) => ({
+  products: productsReducer.products
+});
+export const getLoading = ({ productsReducer }) => ({
+  products: productsReducer.loading
+});
+export const getError = ({ productsReducer }) => ({
+  products: productsReducer.error
+});
+export const getCategories = ({ productsReducer }) => ({
+  categories: uniq(productsReducer.products.map(p => p.type.description))
+});
 
 export const getPriceRange = ({ productsReducer }) => ({
   minProduct: minBy(productsReducer.products, p => p.salePrice) || {},

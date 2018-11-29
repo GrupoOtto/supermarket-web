@@ -9,18 +9,16 @@ const onClick = (path, active) => {
   history.push(url + search);
 };
 
-const category = () => history.location.pathname.split('/')[2];
-
-export default ({ title, name, type, description }) => {
-  const active = category() === description;
-
+const Category = ({ category, active }) => {
   return (
     <div
-      onClick={() => onClick(description, active)}
+      onClick={() => onClick(category.toLowerCase(), active)}
       className={`category ${active ? 'active' : ''}`}
     >
-      <Icon type={type} />
-      <small>{title}</small>
+      <Icon type="home" />
+      <small>{category}</small>
     </div>
   );
 };
+
+export default Category;
