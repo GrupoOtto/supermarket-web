@@ -11,3 +11,5 @@ const extractUser = token => {
 export const getUser = ({ login }) => ({ user: extractUser(login.token) });
 
 export const getToken = ({ login }) => ({ token: login.token });
+
+export const isLogged = ({ login }) => ({ logged: login.token ? true : false });
