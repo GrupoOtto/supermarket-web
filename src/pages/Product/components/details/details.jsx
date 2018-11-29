@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { prepareSale } from '../../../../store/purchase/actions';
+import { setPurchaseItems } from '../../../../store/purchase/actions';
 import { addToCardAndInform } from '../../../../store/cart/actions';
 
 import { Link } from 'react-router-dom';
@@ -13,7 +13,12 @@ import Price from '../../../../components/product/components/price';
 
 import './style.css';
 
-const details = ({ product, prepareSale, addToCardAndInform }) => {
+const details = ({
+  product,
+  prepareSale,
+  addToCardAndInform,
+  setPurchaseItems
+}) => {
   const [amount, setAmount] = useState(1);
 
   return (
@@ -27,7 +32,7 @@ const details = ({ product, prepareSale, addToCardAndInform }) => {
         <Button
           size="large"
           type="primary"
-          onClick={() => prepareSale({ [product._id]: amount })}
+          onClick={() => setPurchaseItems({ [product._id]: amount })}
         >
           <Link to={'/checkout'}>Comprar Ahora</Link>
         </Button>
@@ -44,7 +49,7 @@ const details = ({ product, prepareSale, addToCardAndInform }) => {
 };
 
 const mapDispatchToProps = dispatch => {
-  return bindActionCreators({ addToCardAndInform, prepareSale }, dispatch);
+  return bindActionCreators({ addToCardAndInform, setPurchaseItems }, dispatch);
 };
 
 export default connect(

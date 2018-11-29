@@ -6,6 +6,7 @@ import * as mutations from './mutations';
 const setLoading = createAction(mutations.SET_LOADING);
 const unsetLoading = createAction(mutations.UNSET_LOADING);
 export const setPurchase = createAction(mutations.SET_PRODUCTS);
+export const setPurchaseItems = createAction(mutations.SET_ITEMS);
 
 export const prepareSale = (productsCart, couponCode) => async (
   dispatch,

@@ -6,6 +6,8 @@ const handlers = {
 
   [mutations.UNSET_LOADING]: state => ({ ...state, loading: false }),
 
+  [mutations.SET_ITEMS]: (state, items) => ({ ...state, items }),
+
   [mutations.SET_PRODUCTS]: (state, data) => {
     return {
       ...state,
@@ -17,6 +19,6 @@ const handlers = {
   }
 };
 
-const defaultState = { products: [], loading: false, total: 0 };
+const defaultState = { products: [], loading: false, total: 0, items: {} };
 
 export default reducer(handlers, defaultState);
