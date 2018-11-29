@@ -1,10 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 
 import Product from './product';
-import { Divider, Input, Button, Icon } from 'antd';
-
-const Search = Input.Search;
+import { Button } from 'antd';
 
 const productList = ({
   products,

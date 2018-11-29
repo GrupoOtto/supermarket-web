@@ -33,6 +33,7 @@ export const doSale = data => async (dispatch, getState) => {
     dispatch(setPaying());
     const token = getState().login.token;
     const response = await api.confirmSale(data, token);
+    console.log(response.data);
   } catch (error) {
     message.error(error.response.data.message);
     dispatch(unsetPaying());
