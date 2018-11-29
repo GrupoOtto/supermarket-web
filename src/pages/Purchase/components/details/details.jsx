@@ -4,16 +4,16 @@ import { Card, Divider } from 'antd';
 
 import './style.css';
 
-export default ({ products, purchase }) => {
-  const subtotal = sumBy(products, x => x.salePrice * purchase[x._id]);
+export default ({ products, loading }) => {
+  const subtotal = sumBy(products, x => x.salePrice);
 
   const discount = 0;
   return (
-    <Card className="purchase-details">
+    <Card className="purchase-details" loading={loading}>
       <h3>Resumen de Compra</h3>
       <Divider />
       <div>
-        <span>Productos ({sumBy(keys(purchase), x => purchase[x])})</span>
+        <span>Productos (0)</span>
         <span className="right">${subtotal}</span>
       </div>
       <div>

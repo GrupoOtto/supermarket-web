@@ -10,10 +10,6 @@ export const getCartProducts = ({ cartReducer, productsReducer }) => {
   return filter(cartReducer, productsReducer);
 };
 
-export const getPurchaseProducts = ({ purchaseReducer, productsReducer }) => {
-  return filter(purchaseReducer, productsReducer);
-};
-
 const filter = (reducer, productsReducer) => {
   const key = keys(reducer.products);
   return {

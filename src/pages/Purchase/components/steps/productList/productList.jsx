@@ -8,7 +8,7 @@ const Search = Input.Search;
 export default ({ products, purchase, onSubmit }) => (
   <div className="product-list-container">
     {products.map((p, i) => (
-      <Product key={i} product={p} amount={purchase[p._id]} />
+      <Product key={i} product={p} />
     ))}
     <h3 className="title-discount">Descuento</h3>
     <Divider />

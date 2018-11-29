@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { setPurchase } from '../../../../store/purchase/actions';
+import { prepareSale } from '../../../../store/purchase/actions';
 import { addToCardAndInform } from '../../../../store/cart/actions';
 
 import { Link } from 'react-router-dom';
@@ -27,9 +27,7 @@ const details = props => {
         <Button
           size="large"
           type="primary"
-          onClick={() =>
-            props.setPurchase({ [props.product._id]: amount }, 'product')
-          }
+          onClick={() => props.prepareSale({ [props.product._id]: amount })}
         >
           <Link to={'/checkout'}>Comprar Ahora</Link>
         </Button>
@@ -46,7 +44,7 @@ const details = props => {
 };
 
 const mapDispatchToProps = dispatch => {
-  return bindActionCreators({ addToCardAndInform, setPurchase }, dispatch);
+  return bindActionCreators({ addToCardAndInform, prepareSale }, dispatch);
 };
 
 export default connect(

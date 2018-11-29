@@ -10,26 +10,26 @@ import Steps from './components/steps/steps';
 
 import './style.css';
 
-const purchase = ({ products, purchase }) => {
+const purchase = ({ products, loading }) => {
   return (
     <div id="purchase-container">
-      {products.length === 0 && <Redirect to="/" />}
+      {products.length === 0 && !loading && <Redirect to="/" />}
       <Row>
         <Col xs={24} md={16} style={{ marginBottom: 20 }}>
-          <Steps products={products} purchase={purchase} />
+          <Steps products={products} loading={loading} />
         </Col>
         <Col xs={24} md={8}>
-          <Details products={products} purchase={purchase} />
+          <Details products={products} loading={loading} />
         </Col>
       </Row>
     </div>
   );
 };
 
-const mapStateToProps = state => {
+const mapStateToProps = ({ purchaseReducer }) => {
   return {
-    products: getPurchaseProducts(state).products,
-    purchase: state.purchaseReducer.products
+    products: purchaseReducer.products,
+    loading: purchaseReducer.loading
   };
 };
 
