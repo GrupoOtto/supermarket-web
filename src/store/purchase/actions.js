@@ -17,8 +17,12 @@ export const prepareSale = (productsCart, couponCode) => async (
     const token = getState().login.token;
     const response = await api.prepareSale({ productsCart, couponCode }, token);
     dispatch(setPurchase(response.data));
+    if (couponCode) {
+      message.success('Cupón aplicado correctamente');
+    }
   } catch (error) {
     message.error(error.response.data.message);
     dispatch(unsetLoading());
   }
 };
+/
