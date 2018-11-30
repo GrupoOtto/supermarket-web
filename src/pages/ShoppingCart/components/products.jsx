@@ -16,7 +16,10 @@ const productsList = ({ products, cart, prepareSale, setPurchaseItems }) => (
         Total: $
         {products.reduce((a, b) => a + b.final * cart[b._id], 0).toFixed(2)}
       </h1>
-      <Button type="primary" onClick={() => setPurchaseItems(cart)}>
+      <Button
+        type="primary"
+        onClick={() => setPurchaseItems({ list: cart, cart: true })}
+      >
         <Link to="/checkout">Comprar Todo</Link>
       </Button>
     </div>

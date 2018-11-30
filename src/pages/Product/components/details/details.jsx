@@ -33,7 +33,12 @@ const details = ({
         <Button
           size="large"
           type="primary"
-          onClick={() => setPurchaseItems({ [product._id]: amount })}
+          onClick={() =>
+            setPurchaseItems({
+              list: { [product._id]: amount },
+              cart: false
+            })
+          }
         >
           <Link to={'/checkout'}>Comprar Ahora</Link>
         </Button>

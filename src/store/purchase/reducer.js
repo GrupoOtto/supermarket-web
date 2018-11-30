@@ -8,7 +8,11 @@ const handlers = {
 
   [mutations.SET_PAYING]: state => ({ ...state, paying: true }),
 
-  [mutations.SET_ITEMS]: (state, items) => ({ ...defaultState, items }),
+  [mutations.SET_ITEMS]: (state, data) => ({
+    ...defaultState,
+    items: data.list,
+    cart: data.cart
+  }),
 
   [mutations.SET_SUCCESS]: state => ({
     ...state,
@@ -36,6 +40,7 @@ const handlers = {
 
 const defaultState = {
   products: [],
+  cart: false,
   loading: false,
   paying: false,
   total: 0,

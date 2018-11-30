@@ -15,6 +15,9 @@ export default (state = defaultState, { type, product, amount }) => {
     case 'REMOVE_FROM_CART':
       products = omit(state.products, [product._id]);
       break;
+    case 'CLEAR_CART':
+      products = {};
+      break;
     default:
       products = state.products;
       break;

@@ -33,3 +33,9 @@ export const removeFromCart = product => {
     product
   };
 };
+
+export const clearCart = () => {
+  return {
+    type: 'CLEAR_CART'
+  };
+};

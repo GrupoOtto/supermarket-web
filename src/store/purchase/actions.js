@@ -2,6 +2,7 @@ import { createAction } from 'redux-actions';
 import { message } from 'antd';
 import * as api from '../../lib/api';
 import * as mutations from './mutations';
+import { clearCart } from '../cart/actions';
 
 const setLoading = createAction(mutations.SET_LOADING);
 const unsetLoading = createAction(mutations.UNSET_LOADING);
@@ -33,9 +34,12 @@ export const doSale = data => async (dispatch, getState) => {
   try {
     dispatch(setPaying());
     const token = getState().login.token;
+    const cart = getState().purchaseReducer.cart;
     const response = await api.confirmSale(data, token);
     dispatch(setSuccess());
-    console.log(response.data);
+    if (cart) {
+      dispatch(clearCart());
+    }
   } catch (error) {
     dispatch(setFail());
   }
