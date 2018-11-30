@@ -2,22 +2,27 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Icon, Button } from 'antd';
 
+import './style.css';
+
 export default ({ success }) => (
-  <div style={{ textAlign: 'center' }}>
-    <h2>
-      <Icon type={success ? 'check-circle' : 'close-circle'} /> Compra
+  <div className="result-step">
+    <Icon type={success ? 'check-circle' : 'close-circle'} />
+    <h1>
+      Compra
       {success ? ' Exitosa' : ' fallida'}
-    </h2>
+    </h1>
     <div>
       {success
         ? 'En la próxima hora nos contactaremos para coordinar el envio.'
         : 'Intenta nuevamente'}
     </div>
-    <Link to="/cart">
-      <Button className="cart-btn">Ir al Carrito</Button>
-    </Link>
-    <Link to="/">
-      <Button type="primary">Volver al inicio</Button>
-    </Link>
+    <div className="buttons-section">
+      <Link to="/cart">
+        <Button className="cart-btn">Ir al Carrito</Button>
+      </Link>
+      <Link to="/">
+        <Button type="primary">Volver al inicio</Button>
+      </Link>
+    </div>
   </div>
 );
