@@ -35,7 +35,7 @@ export const doSale = data => async (dispatch, getState) => {
     dispatch(setPaying());
     const token = getState().login.token;
     const cart = getState().purchaseReducer.cart;
-    const response = await api.confirmSale(data, token);
+    await api.confirmSale(data, token);
     dispatch(setSuccess());
     if (cart) {
       dispatch(clearCart());
