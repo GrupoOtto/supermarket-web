@@ -22,6 +22,18 @@
   margin-bottom: 0px;
 }
 
+.product-details .category {
+  text-transform: capitalize;
+  margin: 10px 0px;
+  display: block;
+  font-size: 14px;
+}
+
+.product-details .category a {
+  color: rgba(0, 0, 0, 0.65) !important;
+  text-decoration: none;
+}
+
 .ant-input-number {
   box-shadow: none !important;
   outline: none;

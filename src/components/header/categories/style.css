@@ -28,6 +28,7 @@
   transition: color 500ms ease-in-out;
   color: #afafaf;
   text-align: center;
+  text-transform: capitalize;
 }
 
 #categories .category:hover {
