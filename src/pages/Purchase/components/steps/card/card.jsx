@@ -18,7 +18,7 @@ class CardSection extends Component {
       this.validateLength(number, 16) &&
       name.length > 0 &&
       this.validateLength(expiry, 4) &&
-      this.validateLength(cvc, 4)
+      this.validateLength(cvc, 3)
     ) {
       this.props.onSubmit(this.state);
     }
@@ -55,7 +55,7 @@ class CardSection extends Component {
   };
 
   setCVC = cvc => {
-    if (cvc.toString().length > 4) {
+    if (cvc.toString().length > 3) {
       return;
     }
 
@@ -66,7 +66,7 @@ class CardSection extends Component {
     return (
       <div>
         <Row gutter={48}>
-          <Col xs={24} md={10}>
+          <Col xs={24} xl={10}>
             <Cards
               number={this.state.number}
               name={this.state.name}
@@ -76,7 +76,7 @@ class CardSection extends Component {
               placeholders={{ name: 'Tu Nombre Aquí' }}
             />
           </Col>
-          <Col xs={24} md={14}>
+          <Col xs={24} xl={14}>
             <Form>
               <Form.Item label="Número" colon={false} className="full-length">
                 <Input
@@ -94,7 +94,11 @@ class CardSection extends Component {
                   onChange={e => this.setName(e.target.value)}
                 />
               </Form.Item>
-              <Form.Item label="Fecha de Expiración" colon={false}>
+              <Form.Item
+                label="Fecha de Expiración"
+                colon={false}
+                className="middle-length"
+              >
                 <Input
                   value={this.state.expiry}
                   onFocus={() => this.setFocus('expiry')}
@@ -102,7 +106,7 @@ class CardSection extends Component {
                   onChange={e => this.setExpiry(e.target.value)}
                 />
               </Form.Item>
-              <Form.Item label="CVC" colon={false}>
+              <Form.Item label="CVC" colon={false} className="middle-length">
                 <Input
                   value={this.state.cvc}
                   onFocus={() => this.setFocus('cvc')}

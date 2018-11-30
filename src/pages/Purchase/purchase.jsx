@@ -22,10 +22,10 @@ const purchase = ({
   <div id="purchase-container">
     {keys(purchase).length === 0 && !loading && <Redirect to="/" />}
     <Row>
-      <Col xs={24} md={16} style={{ marginBottom: 20 }}>
+      <Col xs={24} lg={17} style={{ marginBottom: 20 }}>
         <Steps loading={loading} coupon={coupon} />
       </Col>
-      <Col xs={24} md={8}>
+      <Col xs={24} lg={7}>
         <Details
           products={products}
           loading={loading}
