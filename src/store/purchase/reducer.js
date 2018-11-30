@@ -8,17 +8,28 @@ const handlers = {
 
   [mutations.SET_PAYING]: state => ({ ...state, paying: true }),
 
-  [mutations.UNSET_PAYING]: state => ({ ...state, paying: false }),
-
   [mutations.SET_ITEMS]: (state, items) => ({ ...defaultState, items }),
+
+  [mutations.SET_SUCCESS]: state => ({
+    ...state,
+    success: true,
+    paying: false
+  }),
+
+  [mutations.SET_FAIL]: (state, items) => ({
+    ...state,
+    success: false,
+    paying: false
+  }),
 
   [mutations.SET_PRODUCTS]: (state, data) => {
     return {
       ...state,
       loading: false,
-      products: data.products,
-      coupon: data.coupon !== null ? data.coupon : '',
-      total: data.total
+      products: data.list.products,
+      coupon: data.list.coupon !== null ? data.list.coupon : '',
+      total: data.list.total,
+      case: data.caseId
     };
   }
 };

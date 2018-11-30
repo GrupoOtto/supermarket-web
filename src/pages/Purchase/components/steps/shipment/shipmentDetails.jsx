@@ -17,7 +17,7 @@ class RegistrationForm extends Component {
     e.preventDefault();
     this.props.form.validateFieldsAndScroll((err, values) => {
       if (!err) {
-        this.props.onSubmit(values);
+        this.props.onSubmit({ ...values, department: values.department || '' });
       }
     });
   };

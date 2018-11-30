@@ -23,26 +23,35 @@ class StepsSection extends Component {
     step: 0,
     details: {},
     creditCard: {},
-    card: {}
+    processing: false
   };
+
+  componentDidUpdate(prevState, state) {
+    if (this.state.step === 2 && this.state.processing && !this.state.paying) {
+      this.setState({ step: 3 });
+    }
+  }
 
   getDetailsInfo = values => {
     this.setState({ details: values, step: 2 });
   };
 
-  getData = () => ({
-    user: {
-      _id: this.props.user ? this.props.user.sub : null,
-      email: this.state.details.email,
-      name: this.state.details.name
-    },
-    shipment: omit(this.state.details, ['email', 'name']),
-    creditCard: pick(this.state.creditCard, ['number', 'name'])
+  getData = creditCard => ({
+    caseId: this.props.case,
+    saleInfo: {
+      user: {
+        _id: this.props.user ? this.props.user.sub : null,
+        email: this.state.details.email,
+        name: this.state.details.name
+      },
+      shipment: omit(this.state.details, ['email', 'name']),
+      creditCard: omit(creditCard, ['expiry', 'cvc', 'focus'])
+    }
   });
 
   doPayment = creditCard => {
-    this.setState({ creditCard });
-    this.props.doSale(this.getData());
+    this.setState({ creditCard: creditCard, processing: true });
+    this.props.doSale(this.getData(creditCard));
   };
 
   render = () => {
@@ -68,7 +77,7 @@ class StepsSection extends Component {
       },
       {
         title: '',
-        element: <Result />
+        element: <Result success={this.props.success} />
       }
     ];
 
@@ -86,7 +95,18 @@ class StepsSection extends Component {
                 <Icon type={this.props.paying ? 'loading' : 'credit-card'} />
               }
             />
-            <Step icon={<Icon type="check" />} />
+            <Step
+              icon={
+                <Icon
+                  type={
+                    typeof this.props.success === 'boolean' &&
+                    !this.props.success
+                      ? 'close'
+                      : 'check'
+                  }
+                />
+              }
+            />
           </Steps>
           <div className="step-content" />
           <h3> {steps[this.state.step].title}</h3>
@@ -105,7 +125,9 @@ const mapDispatchToProps = dispatch => {
 const mapStateToProps = state => {
   return {
     user: getUser(state).user,
-    paying: state.purchaseReducer.paying
+    case: state.purchaseReducer.case,
+    paying: state.purchaseReducer.paying,
+    success: state.purchaseReducer.success
   };
 };
 
