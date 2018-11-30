@@ -24,6 +24,7 @@ const details = ({
   return (
     <Card className="product-details">
       <h2>{product.name}</h2>
+      <small className="category">{product.type.description}</small>
       <Price price={product.final} left />
       <div>
         Cantidad: <InputNumber onChange={setAmount} />

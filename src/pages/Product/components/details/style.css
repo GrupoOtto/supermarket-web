@@ -18,6 +18,10 @@
   margin-left: 10px;
 }
 
+.product-details h2 {
+  margin-bottom: 0px;
+}
+
 .ant-input-number {
   box-shadow: none !important;
   outline: none;

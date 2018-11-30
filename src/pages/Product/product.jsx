@@ -24,7 +24,12 @@ const product = props => {
         </Col>
       </Row>
       <RelatedProducts
-        products={props.products.filter(x => x !== product).slice(0, 4)}
+        products={props.products
+          .filter(
+            x =>
+              x !== product && x.type.description === product.type.description
+          )
+          .slice(0, 4)}
       />
     </div>
   ) : (
